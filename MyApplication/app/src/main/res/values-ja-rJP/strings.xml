@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_text">ようこそ！</string>
+    <string name="app_name">DEMO作品!</string>
+    <string name="post_article">POテキストを確立します</string>
+    <string name="facebook_info">Facebookのニュース</string>
+    <string name="post_photo">画像POファイルを作成します</string>
+    <string name="action_settings">action_settings</string>
+</resources>

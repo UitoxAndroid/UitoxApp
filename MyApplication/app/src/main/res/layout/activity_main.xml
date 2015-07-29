@@ -27,8 +27,8 @@
         android:textSize="20sp"
         android:textColor="#000000"
         android:background="#6d84b4"
-        android:text="Post文章"
-        android:onClick="postStatus"/>
+        android:text="@string/post_article"
+        android:onClick="postStatus" />
 
     <Button
         android:layout_width="fill_parent"
@@ -37,16 +37,17 @@
         android:textSize="20sp"
         android:textColor="#000000"
         android:background="#6d84b4"
-        android:text="Post照片"
-        android:onClick="postPhoto"/>
+        android:text="@string/post_photo"
+        android:onClick="postPhoto" />
 
     <TextView
-        android:text="臉書使用者資訊"
+        android:text="@string/facebook_info"
         android:textSize="24sp"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/loginInfo" />
 
     <TextView android:id="@+id/loginInfo"
         android:lines="10"
