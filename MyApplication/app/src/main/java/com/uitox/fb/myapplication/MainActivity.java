@@ -37,8 +37,8 @@ public class MainActivity extends ActionBarActivity {
     private ProfilePictureView userimage;     // Facebook SDK的照片元件
     private Toast toast;
 
-    private String IMEI,IMSI,SIM,COUNTRY,NETWORKOPERATION;
-    private int PHONETYPE,NETWORK;
+    private String IMEI, IMSI, SIM, COUNTRY, NETWORKOPERATION;
+    private int PHONETYPE, NETWORK;
 
     /*
     onRestoreInstanceState
@@ -104,8 +104,7 @@ public class MainActivity extends ActionBarActivity {
     (好比說播放動畫、初始化當 activity 得到使用者焦點時才用得到的元件)。
     */
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
 
         // 紀錄應用程式被「安裝」和「執行」的事件。
@@ -127,8 +126,7 @@ public class MainActivity extends ActionBarActivity {
     Activity 暫停的時候，activity 實體保持在記憶體裡、並在隨著 activity 恢復而還原。你不需要重新初始化任何元件。
     */
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
 
         // 紀錄應用程式「結束」的事件。
@@ -224,7 +222,7 @@ public class MainActivity extends ActionBarActivity {
         // 設定Session.Callback物件給LoginButton
         loginButton.setSessionStatusCallback(callback);
 
-        try{
+        try {
             String jsonData = "[\n" +
                     "    {\n" +
                     "        \"chanel\":\"FM\",\n" +
@@ -236,17 +234,17 @@ public class MainActivity extends ActionBarActivity {
                     "    }\n" +
                     "]";
             Gson gson = new Gson();
-            Type listType = new TypeToken<ArrayList<MyJsonObj>>() {}.getType();
+            Type listType = new TypeToken<ArrayList<MyJsonObj>>() {
+            }.getType();
             ArrayList<MyJsonObj> jsonArr = gson.fromJson(jsonData, listType);
-            for(MyJsonObj obj : jsonArr){
+            for (MyJsonObj obj : jsonArr) {
                 Log.i("chanel", obj.getChanelStr());
-                Log.i("start time",obj.getStartTime());
-                Log.i("end time",obj.getEndTime());
-                Log.i("week",obj.getWeekStr());
-                Log.i("DJ",obj.getDjStr());
+                Log.i("start time", obj.getStartTime());
+                Log.i("end time", obj.getEndTime());
+                Log.i("week", obj.getWeekStr());
+                Log.i("DJ", obj.getDjStr());
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -255,31 +253,31 @@ public class MainActivity extends ActionBarActivity {
 
         //取得 IMEI 碼↓
         IMEI = telephonyManager.getDeviceId();
-        Log.i("IMEI",IMEI);
+        Log.i("IMEI", IMEI);
 
         //取得 IMSI 碼↓
         IMSI = telephonyManager.getSubscriberId();
-        Log.i("IMSI",IMSI);
+        Log.i("IMSI", IMSI);
 
         //取的 SIM 卡序號↓
         SIM = telephonyManager.getSimSerialNumber();
-        Log.i("SIM",SIM);
+        Log.i("SIM", SIM);
 
         //取得 PhoneType↓ (NONE、GSM、CDMA、SIP)
         PHONETYPE = telephonyManager.getPhoneType();
-        Log.i("PHONETYPE",Integer.toString(PHONETYPE));
+        Log.i("PHONETYPE", Integer.toString(PHONETYPE));
 
         //取得目前網路類型↓ (UNKNOWN、GPRS、EDGE、HSDPA、CDMA、......)
         NETWORK = telephonyManager.getNetworkType();
-        Log.i("NETWORK",Integer.toString(NETWORK));
+        Log.i("NETWORK", Integer.toString(NETWORK));
 
         //取得國家代碼↓ (TW)
         COUNTRY = telephonyManager.getNetworkCountryIso();
-        Log.i("COUNTRY",COUNTRY);
+        Log.i("COUNTRY", COUNTRY);
 
         //取得電信商名稱↓ (中華電信)
         NETWORKOPERATION = telephonyManager.getNetworkOperatorName();
-        Log.i("NETWORKOPERATION",NETWORKOPERATION);
+        Log.i("NETWORKOPERATION", NETWORKOPERATION);
 
         toast = Toast.makeText(MainActivity.this, "onCreate!~1", Toast.LENGTH_SHORT);
         toast.show();
@@ -293,8 +291,7 @@ public class MainActivity extends ActionBarActivity {
     這樣的數據交流就要用到回調函數onActivityResult
     */
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         // 接收Facebook Activity的回傳值，並交給UiLifecycleHelper物件處理
@@ -304,17 +301,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
     // Facebook SDK狀態Callbak物件
-    Session.StatusCallback callback = new Session.StatusCallback()
-    {
+    Session.StatusCallback callback = new Session.StatusCallback() {
         @Override
-        public void call(Session session, SessionState state, Exception exception)
-        {
-            if (state.isOpened())
-            {
+        public void call(Session session, SessionState state, Exception exception) {
+            if (state.isOpened()) {
                 Toast.makeText(MainActivity.this, "已登入。", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
+            } else {
                 Toast.makeText(MainActivity.this, "已登出。", Toast.LENGTH_SHORT).show();
             }
 
@@ -324,21 +316,18 @@ public class MainActivity extends ActionBarActivity {
     };
 
     // 使用者在Facebook上的執行的動作結果，例如發表文章、照片的成功或失敗
-    private FacebookDialog.Callback dialogCallback = new FacebookDialog.Callback()
-    {
+    private FacebookDialog.Callback dialogCallback = new FacebookDialog.Callback() {
         @Override
-        public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data)
-        {
+        public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
             Toast.makeText(MainActivity.this, "Error: " + error.toString(), Toast.LENGTH_SHORT).show();
         }
 
         @Override
-        public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data)
-        {
+        public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
             // 檢查使用者動作結果
             String completionGesture = FacebookDialog.getNativeDialogCompletionGesture(data);
 
-            if(completionGesture.equals("post"))
+            if (completionGesture.equals("post"))
                 Toast.makeText(MainActivity.this, "張貼完成。", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(MainActivity.this, "張貼取消。", Toast.LENGTH_SHORT).show();
@@ -346,42 +335,34 @@ public class MainActivity extends ActionBarActivity {
     };
 
     // 更新介面
-    private void updateUI()
-    {
+    private void updateUI() {
         Session session = Session.getActiveSession();
 
         // 取得使者登入狀態
         boolean enableButtons = (session != null && session.isOpened());
 
-        if(enableButtons && user != null)
-        {
+        if (enableButtons && user != null) {
             // 使用者資訊
             loginInfo.setText("ID: " + user.getId() + "\n" +
                     "Name: " + user.getName() + "\n" +
-                    "First Name: " + user.getFirstName() + "\n" +
-                    "Last Name:" + user.getLastName() + "\n" +
+                    //"First Name: " + user.getFirstName() + "\n" +
+                    //"Last Name:" + user.getLastName() + "\n" +
                     "email: " + user.getProperty("email"));
 
             // 取得使用者大頭照
             userimage.setProfileId(user.getId());
-        }
-        else if (session != null && session.isClosed())
-        {
+        } else if (session != null && session.isClosed()) {
             user = null;
             loginInfo.setText("尚未登入");
             userimage.setProfileId(null);
-        }
-        else
-        {
+        } else {
             loginInfo.setText("登入錯誤");
         }
     }
 
-    public void postStatus(View view)
-    {
+    public void postStatus(View view) {
         // 判斷使用者安裝的Facebook App是否可以提供該功能
-        if(FacebookDialog.canPresentShareDialog(this, FacebookDialog.ShareDialogFeature.SHARE_DIALOG))
-        {
+        if (FacebookDialog.canPresentShareDialog(this, FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
             // 使用FacebookDialog.ShareDialog來張貼文章
             FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
                     .setLink("http://www.aaronlife.com") // 要張貼的連結
@@ -389,33 +370,35 @@ public class MainActivity extends ActionBarActivity {
                     .build();
 
             uiHelper.trackPendingDialogCall(shareDialog.present()); // 切換到張貼狀態的Facebook Activity
-        }
-        else
-        {
+        } else {
             Toast.makeText(this, "不支援Sharedialog", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void postPhoto(View view)
-    {
+    public void postPhoto(View view) {
         // 判斷使用者安裝的Facebook App是否可以提供該功能
-        if(FacebookDialog.canPresentShareDialog(this, FacebookDialog.ShareDialogFeature.PHOTOS))
-        {
+        if (FacebookDialog.canPresentShareDialog(this, FacebookDialog.ShareDialogFeature.PHOTOS)) {
             // 使用FacebookDialog.PhotoShareDialog來張貼文章
             FacebookDialog sharePhotoDialog = new FacebookDialog.PhotoShareDialogBuilder(this)
                     .addPhotos(Arrays.asList(((BitmapDrawable) getResources().getDrawable(R.drawable.icon)).getBitmap())) // 要張貼的照片
                     .build();
 
             uiHelper.trackPendingDialogCall(sharePhotoDialog.present()); // 切換到張貼照片的Facebook Activity
-        }
-        else
-        {
+        } else {
             Toast.makeText(this, "不支援PhotoShareDialog", Toast.LENGTH_SHORT).show();
         }
     }
 
+    public void create_activity(View view) {
+        Intent resultIntent = new Intent(view.getContext(), EventActivity.class);
+        resultIntent.putExtra("val_1", "i am val 1");
+        resultIntent.putExtra("val_2", "i am vaal 2");
+        startActivity(resultIntent);
+        finish();
+    }
+
     /*
-    * 建立
+    * 建立Menu
     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

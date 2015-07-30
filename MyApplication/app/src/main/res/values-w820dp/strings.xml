@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_1">方法1</string>
+    <string name="button_2">方法2</string>
+    <string name="button_3">方法3</string>
+    <string name="button_4">方法4</string>
+</resources>

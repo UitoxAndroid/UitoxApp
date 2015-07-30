@@ -7,4 +7,9 @@
     <string name="facebook_info">facebook 資訊</string>
     <string name="post_photo">建立圖片PO文</string>
     <string name="action_settings">action_settings</string>
+    <string name="create_activity">開啟第二個Activity</string>
+    <string name="button_1">方法1</string>
+    <string name="button_2">方法2</string>
+    <string name="button_3">方法3</string>
+    <string name="button_4">方法4</string>
 </resources>
