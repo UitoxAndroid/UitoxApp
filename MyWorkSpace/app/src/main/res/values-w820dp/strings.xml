@@ -4,4 +4,5 @@
     <string name="button_2">方法2</string>
     <string name="button_3">方法3</string>
     <string name="button_4">方法4</string>
+    <string name="button_5">開啟ArrayListView</string>
 </resources>

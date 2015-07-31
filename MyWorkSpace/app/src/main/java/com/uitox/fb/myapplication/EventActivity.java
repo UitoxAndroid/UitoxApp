@@ -135,6 +135,11 @@ public class EventActivity extends ActionBarActivity implements View.OnClickList
         toast.show();
     }
 
+    public void bt_dia5(View view) {
+        Intent resultIntent = new Intent(view.getContext(), ArrayListActivity.class);
+        startActivity(resultIntent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
