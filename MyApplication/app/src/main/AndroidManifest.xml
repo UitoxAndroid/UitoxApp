@@ -38,6 +38,10 @@
             android:name=".EventActivity"
             android:label="@string/title_activity_array_list" >
         </activity>
+        <activity
+            android:name=".ArrayListActivity"
+            android:label="@string/title_activity_array_list" >
+        </activity>
     </application>
 
 </manifest>
