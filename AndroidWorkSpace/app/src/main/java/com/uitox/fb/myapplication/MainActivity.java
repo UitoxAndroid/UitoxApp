@@ -23,6 +23,7 @@ import com.facebook.widget.LoginButton;
 import com.facebook.widget.ProfilePictureView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.uitox.fb.entity.MyJsonObj;
 import com.uitox.fb.uitoxlibrary.ShowYourMessage;
 
 import java.lang.reflect.Type;

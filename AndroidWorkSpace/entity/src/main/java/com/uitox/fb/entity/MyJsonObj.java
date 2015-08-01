@@ -1,4 +1,4 @@
-package com.uitox.fb.myapplication;
+package com.uitox.fb.entity;
 
 import com.google.gson.annotations.SerializedName;
 
