@@ -104,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
+            System.out.println("getView " + position + " " + convertView);
+            Log.i("-getView-", "getView " + position + " " + convertView);
+
             //第一種寫法
             counter++; //次數+1
             convertView = mInflater.inflate(R.layout.list_view, parent, false);
@@ -118,9 +121,6 @@ public class MainActivity extends AppCompatActivity {
             /*
             //第二種寫法
             Elements elements = null;
-            System.out.println("getView " + position + " " + convertView);
-            Log.i("-getView-", "getView " + position + " " + convertView);
-
             if (convertView == null) {
                 elements = new Elements();
                 //我抽屜裡的設計圖
