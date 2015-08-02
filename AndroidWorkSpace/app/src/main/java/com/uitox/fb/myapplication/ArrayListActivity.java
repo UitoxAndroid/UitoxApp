@@ -11,25 +11,34 @@ import android.widget.ListView;
 
 import com.uitox.fb.uitoxlibrary.ShowYourMessage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ArrayListActivity extends ActionBarActivity {
 
     private ListView listView;
-    private String[] list = {"鉛筆", "原子筆", "鋼筆", "毛筆", "彩色筆"};
+    //private String[] list = {"鉛筆", "原子筆", "鋼筆", "毛筆", "彩色筆"};
+    private List<String> list;
     private ArrayAdapter<String> listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list);
-
         listView = (ListView) findViewById(R.id.listView);
+
+        list = new ArrayList<String>();
+        for (int i = 0; i < 5000; i++) {
+            list.add("item " + i);
+        }
+
         listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(listAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ShowYourMessage.msgToShowShort(ArrayListActivity.this,"你選擇的是" + list[position]);
+                ShowYourMessage.msgToShowShort(ArrayListActivity.this,"你選擇的是" + list.get(position));
             }
         });
     }
