@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_id">947346248659336</string>
+    <string name="welcome_text">歡迎!</string>
+    <string name="app_name">DEMO作品!</string>
+    <string name="post_article">建立PO文</string>
+    <string name="facebook_info">facebook 資訊</string>
+    <string name="post_photo">建立圖片PO文</string>
+    <string name="action_settings">action_settings</string>
+    <string name="create_activity">開啟第二個Activity</string>
+    <string name="button_1">方法1</string>
+    <string name="button_2">方法2</string>
+    <string name="button_3">方法3</string>
+    <string name="button_4">方法4</string>
+    <string name="button_5">開啟ArrayListView</string>
+</resources>

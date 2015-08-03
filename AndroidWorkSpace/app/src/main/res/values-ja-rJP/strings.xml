@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_text">ようこそ！</string>
+    <string name="app_name">DEMO作品!</string>
+    <string name="post_article">POテキストを確立します</string>
+    <string name="facebook_info">Facebookのニュース</string>
+    <string name="post_photo">画像POファイルを作成します</string>
+    <string name="action_settings">action_settings</string>
+    <string name="create_activity">第二の活動を開き</string>
+    <string name="button_1">方法1</string>
+    <string name="button_2">方法2</string>
+    <string name="button_3">方法3</string>
+    <string name="button_4">方法4</string>
+    <string name="button_5">開啟ArrayListView</string>
+</resources>
