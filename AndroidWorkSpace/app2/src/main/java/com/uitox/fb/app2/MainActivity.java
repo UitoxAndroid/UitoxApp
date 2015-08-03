@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.uitox.fb.uitoxlibrary.ShowYourDialog;
 import com.uitox.fb.uitoxlibrary.ShowYourMessage;
 
 import java.util.ArrayList;
@@ -40,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         //將容器調適為我們可用格式
         Adapter adapter = new Adapter(this);
         listView.setAdapter(adapter);
+
+        ShowYourDialog dialog = new ShowYourDialog(this);
+        dialog.ShowDialog();
     }
 
     /*
@@ -104,11 +108,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            System.out.println("getView " + position + " " + convertView);
-            Log.i("-getView-", "getView " + position + " " + convertView);
-
             //第一種寫法
-            counter++; //次數+1
+            /*counter++; //次數+1
             convertView = mInflater.inflate(R.layout.list_view, parent, false);
 
             String text = (String) list.get(position).toString();
@@ -116,11 +117,14 @@ public class MainActivity extends AppCompatActivity {
             TextView tv = (TextView) convertView.findViewById(R.id.textView1);
             tv.setText(text);
 
-            Log.i("-getView-", String.valueOf(counter));
+            Log.i("-getView-", String.valueOf(counter));*/
 
-            /*
+
             //第二種寫法
             Elements elements = null;
+            System.out.println("getView " + position + " " + convertView);
+            Log.i("-getView-", "getView " + position + " " + convertView);
+
             if (convertView == null) {
                 elements = new Elements();
                 //我抽屜裡的設計圖
@@ -134,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
             //將資料依序放入我擺放的位置
             elements.str1.setText((String) list.get(position).toString());
-            */
+
 
             return convertView;
         }
