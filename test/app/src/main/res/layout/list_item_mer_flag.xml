@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/flag" android:background="@color/flag_color" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/fresh_flag" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:src="@drawable/fresh" android:layout_toRightOf="@id/flag" android:layout_centerVertical="true" android:contentDescription="@null" />
+    <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/gray_9c9c9c" android:gravity="center" android:id="@id/value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/gray_9c9c9c" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:singleLine="true" android:layout_toLeftOf="@id/value" android:layout_toRightOf="@id/fresh_flag" android:layout_centerVertical="true" />
+</RelativeLayout>

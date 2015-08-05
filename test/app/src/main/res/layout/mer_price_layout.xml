@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="#ff9c9c9c" android:id="@id/tvPriceName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mer_feiniu_price" />
+        <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/app_line_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/unit_rmb" android:singleLine="true" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/app_line_color" android:id="@id/merchandise_real_price" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/reference_price_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+        <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="#ff9c9c9c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mer_reference_price" />
+        <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="#ff9c9c9c" android:id="@id/merchandise_suggest_price" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="70.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.feiniu.market.view.image.SmartImageView android:id="@id/img" android:layout_width="65.0dip" android:layout_height="56.0dip" android:layout_marginLeft="10.0dip" android:layout_centerVertical="true" />
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/category_arrow_icon" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="16.0sp" android:textColor="#ff696969" android:id="@id/subject" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_toRightOf="@id/img" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/first_list_subtitle_color" android:ellipsize="end" android:id="@id/subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="28.0dip" android:layout_marginBottom="10.0dip" android:singleLine="true" android:layout_toRightOf="@id/img" android:layout_below="@id/subject" android:layout_alignLeft="@id/subject" />
+    <ImageView android:id="@id/tag_img" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:src="@drawable/category_tag_icon" android:layout_toRightOf="@id/img" android:layout_centerVertical="true" />
+</RelativeLayout>

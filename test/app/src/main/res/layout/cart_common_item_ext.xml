@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="200.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/root" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:id="@id/layout_pkg" layout="@layout/cart_package" />
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/layout_item" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:id="@id/cart_item_img_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <CheckBox android:layout_gravity="center_vertical" android:id="@id/cart_check_row" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="10.0dip" android:button="@drawable/cart_checkbox" />
+                <com.feiniu.market.view.image.SmartImageView android:id="@id/cart_item_img" android:background="@drawable/image_bg" android:padding="2.0dip" android:layout_width="82.0dip" android:layout_height="82.0dip" />
+            </LinearLayout>
+            <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:minHeight="82.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="@color/text_color_3c" android:ellipsize="end" android:gravity="top" android:id="@id/cart_item_name" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="蓝月亮 手洗专用洗" android:maxLines="2" android:layout_toLeftOf="@id/cart_item_del" />
+                <Button android:textSize="@dimen/small_text_size" android:textColor="@color/text_click_gray_white" android:id="@id/cart_item_del" android:background="@drawable/cart_del_bg" android:layout_width="55.0dip" android:layout_height="40.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:text="@string/delete" android:layout_alignParentRight="true" />
+                <TextView android:textSize="12.0sp" android:textColor="@color/app_line_color" android:id="@id/cart_item_limit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/cart_item_name" />
+                <LinearLayout android:gravity="bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/cart_item_limit" android:layout_alignParentBottom="true">
+                    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/bg_data_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip">
+                        <Button android:enabled="true" android:textSize="@dimen/large_text_size" android:textColor="@color/divider_gray" android:gravity="center" android:id="@id/cart_item_min" android:background="@drawable/bg_data_min_selector" android:paddingBottom="1.0dip" android:layout_width="35.0dip" android:layout_height="35.0dip" android:text="@string/text_minus" />
+                        <EditText android:enabled="true" android:textColor="@color/black" android:gravity="center" android:id="@id/cart_item_editNum" android:background="@null" android:padding="3.0dip" android:layout_width="35.0dip" android:layout_height="35.0dip" android:text="1" android:singleLine="true" android:numeric="integer" />
+                        <Button android:enabled="true" android:textSize="@dimen/large_text_size" android:textColor="@color/divider_gray" android:gravity="center" android:id="@id/cart_item_sum" android:background="@drawable/bg_data_plus_selector" android:paddingBottom="1.0dip" android:layout_width="35.0dip" android:layout_height="35.0dip" android:text="@string/text_plus" />
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/text_color_3c" android:gravity="center|right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="￥" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/text_color_3c" android:gravity="center|right" android:id="@id/cart_item_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/cart_extra_layout_suggest" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-8.0dip" />
+        <LinearLayout android:orientation="vertical" android:paddingLeft="40.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/cart_extra_layout_combo" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/cart_extra_layout_gift" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/cart_extra_accessories" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/cart_extra_layout_activity" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/cart_extra_layout_promotional" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_gray" android:background="#aaffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

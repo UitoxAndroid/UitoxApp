@@ -1,0 +1,255 @@
+{
+    "elapsedTime": "0.9955",
+    "errorCode": 0,
+    "errorDesc": "成功",
+    "body": {
+        "orderDetail": {
+            "orderId": "201505CP21000030",
+            "totalCount": 3,
+            "orderTime": "2015-05-21 10:48:46",
+            "is_pay": 1,
+            "pay_code": 11,
+            "pay_end_dt": "2015-05-22 10:48:46",
+            "pay_end_dt_msg": "",
+            "is_ask": 1,
+            "isMoreShip": 0,
+            "deliverState": 0,
+            "deliverDescr": "",
+            "isCancel": 0,
+            "score": 0,
+            "payList": {
+                "amount": {
+                    "name": "商品总额",
+                    "price": "345.00"
+                },
+                "shipFee": {
+                    "name": "运费",
+                    "price": "0.00"
+                },
+                "ticketUse": {
+                    "name": "优惠券抵扣",
+                    "price": "10.00"
+                },
+                "pcashUse": {
+                    "name": "购物金抵扣",
+                    "price": "0.00"
+                },
+                "total_camp": [],
+                "discount": {
+                    "name": "买立减折扣",
+                    "price": "0.00"
+                },
+                "couponUsed": {
+                    "name": "抵用券",
+                    "price": "0.00"
+                },
+                "cardUsed": {
+                    "name": "购物卡",
+                    "price": "0.00"
+                },
+                "scoreUsed": {
+                    "name": "积分抵扣",
+                    "price": "0.00"
+                },
+                "needPay": {
+                    "name": "应付金额",
+                    "price": "335.00"
+                },
+                "orderAmount": {
+                    "name": "订单金额",
+                    "price": "335.00"
+                },
+                "discountMall": {
+                    "name": "商城优惠",
+                    "price": "0.00"
+                },
+                "couponMall": {
+                    "name": "红包抵扣",
+                    "price": "0.00"
+                }
+            },
+            "payment": {
+                "pay_code": 11,
+                "name": "支付宝钱包支付",
+                "logo": "",
+                "mobilePay": 1
+            },
+            "consignee": {
+                "addrId": "",
+                "name": "gtyy",
+                "province": "上海",
+                "city": "上海市",
+                "zip": "",
+                "area": "长宁区",
+                "addr": "xfg",
+                "tel": "22222222",
+                "cellPhone": "13333333333"
+            },
+            "dsList": [
+                {
+                    "fdl_seq": "DG000001",
+                    "freight_number": "A0001",
+                    "ds_no": 1,
+                    "subOrdersId": "1",
+                    "ds_type": 1,
+                    "ds_desc": "飞牛网自营",
+                    "status": 1,
+                    "isMoreShip": 0,
+                    "new_ship_msg": "",
+                    "ds_r_qty": 0,
+                    "ds_totalCount": 1,
+                    "ds_deliverState": 0,
+                    "ds_deliverDesc": "",
+                    "preord_msg": "",
+                    "deliver_msg": "下单后预计1~3天内送到",
+                    "mList": [
+                        {
+                            "main": {
+                                "is_orgi_item": 1,
+                                "sm_seq": "201403CM250000528",
+                                "sm_name": "Kans 韩束 雪白肌美白精华霜 50g/瓶",
+                                "it_pic": "/C/item/2014/0325/201403C250000331/0_1_800x800.jpg",
+                                "qty": 1,
+                                "c_qty": 1,
+                                "r_qty": 0,
+                                "sm_price": "145.00",
+                                "subtotal": "145.00",
+                                "is_pre_ord": 0,
+                                "pro_ref_etd_dt": "",
+                                "is_fresh_prod": 0,
+                                "deliver_deadline": "1",
+                                "picUrlBase": "http://img.beta1.fn"
+                            },
+                            "productMain": [
+                                {
+                                    "itno": "201403CG250000528",
+                                    "it_show_price": "145.00",
+                                    "sm_price": "145.00",
+                                    "subtotal": "145.00",
+                                    "itname": "Kans 韩束 雪白肌美白精华霜 50g/瓶",
+                                    "it_size": "",
+                                    "color": "",
+                                    "it_pic": "http://img.beta1.fn/C/item/2014/0325/201403C250000331/0_1_108x108.jpg",
+                                    "is_fresh_prod": 0,
+                                    "qty": 1,
+                                    "c_qty": 1,
+                                    "r_qty": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "shipList": [
+                        {
+                            "shipSite": "飞牛仓库",
+                            "shipDesc": "收到订单",
+                            "shipTime": "2015-05-21 10:48:46",
+                            "shipState": 1
+                        },
+                        {
+                            "shipSite": "飞牛仓库",
+                            "shipDesc": "拣货",
+                            "shipTime": "",
+                            "shipState": 0
+                        },
+                        {
+                            "shipSite": "飞牛仓库",
+                            "shipDesc": "打包完成",
+                            "shipTime": "",
+                            "shipState": 0
+                        },
+                        {
+                            "shipSite": "飞牛仓库",
+                            "shipDesc": "出货",
+                            "shipTime": "",
+                            "shipState": 0
+                        },
+                        {
+                            "shipSite": "飞牛仓库",
+                            "shipDesc": "完成",
+                            "shipTime": "",
+                            "shipState": 0
+                        }
+                    ]
+                },
+                {
+                    "fdl_seq": "2015000070",
+                    "freight_number": "",
+                    "ds_no": 2,
+                    "subOrdersId": "20150521104846940054",
+                    "ds_type": 4,
+                    "ds_desc": "小强专营店",
+                    "status": 1,
+                    "isMoreShip": 0,
+                    "new_ship_msg": "",
+                    "ds_r_qty": 0,
+                    "ds_totalCount": 2,
+                    "ds_deliverState": 0,
+                    "ds_deliverDesc": "",
+                    "preord_msg": "",
+                    "deliver_msg": "由供应商直送，预计1~2天发货",
+                    "mList": [
+                        {
+                            "main": {
+                                "is_orgi_item": 1,
+                                "sm_seq": "100002787",
+                                "sm_name": "满件折勾选上不封顶指定N件",
+                                "it_pic": "http://wh-image01.fn.com/image/CtNARVVYSsWAIhAGAACsgkXxENI355.jpg_108x108.jpg",
+                                "qty": 2,
+                                "c_qty": 2,
+                                "r_qty": 0,
+                                "sm_price": "100.00",
+                                "subtotal": "200.00",
+                                "is_pre_ord": 0,
+                                "pro_ref_etd_dt": "",
+                                "is_fresh_prod": 0,
+                                "deliver_deadline": ""
+                            },
+                            "productMain": [
+                                {
+                                    "itno": "",
+                                    "it_show_price": "100.00",
+                                    "sm_price": "100.00",
+                                    "subtotal": "200.00",
+                                    "itname": "满件折勾选上不封顶指定N件",
+                                    "it_size": "",
+                                    "color": "",
+                                    "it_pic": "http://wh-image01.fn.com/image/CtNARVVYSsWAIhAGAACsgkXxENI355.jpg_108x108.jpg",
+                                    "is_fresh_prod": 0,
+                                    "qty": 2,
+                                    "c_qty": 2,
+                                    "r_qty": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "shipList": [
+                        {
+                            "shipSite": "",
+                            "shipDesc": "收到订单",
+                            "shipTime": "2015-05-21 10:48:46",
+                            "shipState": 1
+                        },
+                        {
+                            "shipSite": "",
+                            "shipDesc": "买家支付",
+                            "shipTime": "",
+                            "shipState": 0
+                        },
+                        {
+                            "shipSite": "",
+                            "shipDesc": "商家发货",
+                            "shipTime": "",
+                            "shipState": 0
+                        },
+                        {
+                            "shipSite": "",
+                            "shipDesc": "完成",
+                            "shipTime": "",
+                            "shipState": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

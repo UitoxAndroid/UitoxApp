@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:gravity="bottom" android:layout_gravity="bottom" android:orientation="horizontal" android:background="@drawable/coupon_tab_group_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip">
+        <RadioButton android:id="@id/detailTab" android:background="@drawable/coupon_tab_left_btn_bg" android:text="@string/mer_detail_tab" style="@style/mer_detail_tabs" />
+        <RadioButton android:id="@id/packagingTab" android:text="@string/mer_specification_packaging_tab" style="@style/mer_detail_tabs" />
+        <RadioButton android:id="@id/serviceTab" android:background="@drawable/coupon_tab_right_btn_bg" android:text="@string/mer_service_tab" style="@style/mer_detail_tabs" />
+    </RadioGroup>
+    <FrameLayout android:id="@id/content" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

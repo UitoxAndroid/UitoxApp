@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_size_middle" android:textColor="@color/color_333333" android:ellipsize="end" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+    <TextView android:textSize="@dimen/font_size_middle" android:textColor="@color/color_999999" android:id="@id/priceLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/mer_reference_prize_label" android:layout_below="@id/title" />
+    <TextView android:textSize="@dimen/font_size_middle" android:textColor="@color/color_999999" android:id="@id/referencePrice" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:text="￥" android:layout_toRightOf="@id/priceLabel" android:layout_below="@id/title" />
+    <TextView android:textColor="@color/color_db384c" android:id="@id/specSelect" android:background="@drawable/bg_select" android:padding="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="20.0dip" android:text="@string/mer_specification_select_tip" android:layout_toRightOf="@id/referencePrice" android:layout_below="@id/title" />
+</RelativeLayout>

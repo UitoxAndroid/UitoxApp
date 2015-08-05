@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ffd5d5d5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="12.0dip" />
+    <RelativeLayout android:background="@color/white" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="43.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/black" android:id="@id/returned_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/returned_query" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_returned_query" />
+            <ImageView android:id="@id/arrow_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:src="@drawable/arrow_right" android:scaleType="center" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="92.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/divider_gray" android:layout_width="fill_parent" android:layout_height="0.5px" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" android:layout_alignParentBottom="true" />
+    <LinearLayout android:orientation="vertical" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="订单编号：" />
+            <TextView android:textSize="14.0sp" android:id="@id/score_order" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1234567898765432" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:id="@id/score_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="购物下单" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="16.0dip">
+        <TextView android:textSize="20.0sp" android:textColor="@color/score_point_increase" android:gravity="center" android:id="@id/score_point" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:text="+1000" android:layout_weight="1.0" android:layout_alignParentRight="true" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/darkgray" android:id="@id/score_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="2015/01/01" android:layout_weight="1.0" android:layout_below="@id/score_point" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

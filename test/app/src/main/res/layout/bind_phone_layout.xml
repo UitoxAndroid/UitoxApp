@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_gravity="top" android:layout_width="fill_parent" android:layout_height="50.0dip" layout="@layout/titlebar_normal" />
+    <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/text_bindphone_hint" android:id="@id/hint_bind_phone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/hint_bind_phone" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:background="@color/divider_gray" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="54.0dip">
+            <TextView android:textSize="@dimen/medium_text_size" android:textColor="@color/text_textview" android:gravity="end|center" android:id="@id/cell_phone_label" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="@string/text_my_phone" />
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+                <Button android:textSize="@dimen/medium_text_size" android:textColor="@color/red_db384" android:gravity="center" android:id="@id/retrieve_auth_code" android:background="@drawable/authcode_bt_bg_selector" android:layout_width="100.0dip" android:layout_height="fill_parent" android:text="@string/text_bt_get_auth_code" android:layout_alignParentRight="true" />
+                <View android:id="@id/divider" android:background="@color/divider_gray" android:layout_width="0.5dip" android:layout_height="fill_parent" android:layout_toLeftOf="@id/retrieve_auth_code" />
+                <com.feiniu.market.view.ClearEditText android:textSize="@dimen/medium_text_size" android:id="@id/cell_phone_edit" android:background="@drawable/address_edit_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_toLeftOf="@id/divider" android:inputType="phone" />
+            </RelativeLayout>
+        </LinearLayout>
+        <View android:background="@color/divider_gray" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="54.0dip">
+            <TextView android:textSize="@dimen/medium_text_size" android:textColor="@color/text_textview" android:gravity="end|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="@string/text_auth_code" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+                <com.feiniu.market.view.ClearEditText android:textSize="@dimen/medium_text_size" android:id="@id/auth_code" android:background="@drawable/address_edit_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:background="@color/divider_gray" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    </LinearLayout>
+    <Button android:textSize="@dimen/large_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/next_step" android:background="@drawable/shape_button_style_disabled" android:clickable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="10.0dip" android:text="@string/next_step" />
+</LinearLayout>

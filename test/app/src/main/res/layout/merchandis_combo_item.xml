@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/root" android:background="#ffffffff" android:padding="8.0dip" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0dip" android:textColor="@color/darkgray" android:layout_gravity="center|left" android:id="@id/combo_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:maxLines="2" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/combo_select_layout" android:background="@drawable/image_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="10.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="#ff3c3c3c" android:gravity="center_vertical" android:id="@id/combo_select_colorsize" android:paddingLeft="5.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="尺寸1" android:layout_weight="1.0" />
+        <ImageButton android:layout_gravity="center_vertical" android:id="@id/combo_ic_arrow_down" android:background="@drawable/gray_rectangle_bg" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_arrow_down" />
+    </LinearLayout>
+</LinearLayout>

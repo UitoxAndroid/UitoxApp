@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_coupon_item_height">25.0dip</dimen>
+    <dimen name="detail_coupon_item_price_width">48.0dip</dimen>
+    <dimen name="detail_coupon_item_width">54.0dip</dimen>
+    <dimen name="home_bottom_banner_text_size">11.0sp</dimen>
+</resources>

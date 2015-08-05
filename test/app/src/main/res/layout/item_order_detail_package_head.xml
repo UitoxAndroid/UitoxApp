@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@drawable/my_order_headline_with_divider" android:layout_width="fill_parent" android:layout_height="9.0dip" />
+    <RelativeLayout android:background="@color/white" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="43.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/package_num" android:background="@drawable/bk_pkg_left" android:padding="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="包裹1" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/red_db384" android:ellipsize="end" android:gravity="center" android:id="@id/dispatch_info" android:background="@drawable/bk_pkg_right" android:padding="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="肥牛王配送肥牛王配送肥牛王配送" android:maxEms="8" android:singleLine="true" android:layout_toRightOf="@id/package_num" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="right" android:orientation="vertical" android:id="@id/statusLayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/dispatch_info" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <TextView android:textSize="14.0sp" android:textColor="@color/red_db384" android:id="@id/package_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="待支付" />
+            <TextView android:textSize="10.0sp" android:textColor="#ff999999" android:ellipsize="middle" android:id="@id/arrive_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="预计3天后发货预计3天后发货预计3天后发货预计3天后发货预计3天后发货预计3天后发货预计3天后发货预计3天后发货" android:singleLine="true" />
+        </LinearLayout>
+        <Button android:textSize="14.0sp" android:textColor="@color/white" android:id="@id/btnConfirmTake" android:background="@drawable/bk_btn_normal" android:visibility="gone" android:layout_width="84.0dip" android:layout_height="27.0dip" android:text="@string/my_order_confirm_to_take" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

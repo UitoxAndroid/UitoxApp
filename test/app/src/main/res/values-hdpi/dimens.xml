@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_coupon_item_height">22.0dip</dimen>
+    <dimen name="detail_coupon_item_price_width">42.0dip</dimen>
+    <dimen name="detail_coupon_item_width">50.0dip</dimen>
+    <dimen name="detail_coupon_item_wrap_height">32.0dip</dimen>
+    <dimen name="detail_first_view_bottom_height">50.0dip</dimen>
+    <dimen name="detail_top_show_pic_height">320.0dip</dimen>
+    <dimen name="home_bottom_banner_text_size">12.0sp</dimen>
+    <dimen name="medium_text_size">16.0sp</dimen>
+    <dimen name="small_middle_text_size">15.0sp</dimen>
+    <dimen name="title_bar_text_size">18.0sp</dimen>
+    <dimen name="top_bar_height">45.0dip</dimen>
+    <dimen name="top_bar_height_top">44.0dip</dimen>
+    <dimen name="bottom_tab_height">55.0dip</dimen>
+    <dimen name="cart_foot_height">45.0dip</dimen>
+    <dimen name="cart_fragment_margin_top_text_bottom">5.0dip</dimen>
+    <dimen name="cart_fragment_margin_top_text_top">15.0dip</dimen>
+    <dimen name="cart_login_tip_line_space">1.0dip</dimen>
+    <dimen name="cart_login_tip_padding">5.0dip</dimen>
+    <dimen name="cart_login_tip_text_size">13.0sp</dimen>
+    <dimen name="large_middle_text_size">20.0sp</dimen>
+    <dimen name="login_btn_text_margin_bottom">6.0dip</dimen>
+    <dimen name="login_btn_text_margin_left">10.0dip</dimen>
+    <dimen name="login_btn_text_margin_right">10.0dip</dimen>
+    <dimen name="login_btn_text_margin_top">3.0dip</dimen>
+    <dimen name="rebuy_activity_margin_top_text_top">30.0dip</dimen>
+    <dimen name="rec_item_image_frame_width">1.0dip</dimen>
+    <dimen name="rec_item_image_size">80.0dip</dimen>
+    <dimen name="rec_scroller_height">140.0dip</dimen>
+</resources>

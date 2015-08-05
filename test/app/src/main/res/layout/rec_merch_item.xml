@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/rec_merch_item_root" android:descendantFocusability="blocksDescendants" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/rec_merch_item_top" layout="@layout/rec_merch_item_top" />
+    <include android:id="@id/rec_mech_item_combo_text_view" layout="@layout/rec_mech_item_combo_text_view" />
+    <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="#ffdb3a4c" android:ellipsize="end" android:id="@id/rec_merch_item_sm_price" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Y 990.80" android:layout_weight="0.0" />
+</LinearLayout>

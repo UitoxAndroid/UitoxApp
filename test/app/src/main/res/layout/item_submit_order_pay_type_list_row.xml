@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="#ff9c9c9c" android:ellipsize="end" android:id="@id/pay_type_name" android:layout_width="150.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="0.0" />
+        <TextView android:textSize="13.0sp" android:textColor="#ff9c9c9c" android:gravity="right" android:id="@id/pay_type_price" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+</TableRow>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/convertView" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@drawable/my_order_headline" android:layout_width="fill_parent" android:layout_height="9.0dip" />
+    <RelativeLayout android:background="@color/white" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0sp" android:textStyle="normal" android:textColor="@color/gray_3c3c3c" android:gravity="left" android:id="@id/tvOrderId" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="16.0sp" android:textStyle="normal" android:textColor="@color/black" android:gravity="right" android:id="@id/tvOrderPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

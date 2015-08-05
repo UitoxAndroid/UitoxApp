@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@drawable/my_order_headline_with_divider" android:layout_width="fill_parent" android:layout_height="9.0dip" android:layout_alignParentBottom="true" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="43.0dip" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_basic_info" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff007aff" android:gravity="center_vertical" android:id="@id/btn_contact" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/my_order_detail_contact" android:drawableLeft="@drawable/btn_phone" android:drawablePadding="8.0dip" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <View android:background="#ffd5d5d5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="12.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:gravity="center|left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_order_num" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:gravity="center|right" android:id="@id/order_num" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:gravity="center|left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_order_time" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:gravity="center|right" android:id="@id/order_time" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:layout_gravity="center|left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_order_address" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:gravity="center|right" android:id="@id/address1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:textSize="14.0sp" android:textColor="@color/black" android:gravity="center|right" android:id="@id/address2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:gravity="center|left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_package_receiver" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:gravity="center|right" android:id="@id/package_receiver" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:gravity="center|left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_pay_method" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/black" android:gravity="center|right" android:id="@id/pay_method" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:gravity="center|left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_order_price" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/red_db384" android:gravity="center|right" android:id="@id/order_price" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/pay_deadline_notify" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:gravity="center_vertical" android:id="@id/pay_deadline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <RelativeLayout android:orientation="horizontal" android:id="@id/scoreLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:id="@id/score_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_score" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff999999" android:id="@id/score_dec_label" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_order_detail_score_dec" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/red_db384" android:gravity="right" android:id="@id/scoreText" android:paddingLeft="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/score_dec_label" android:layout_toRightOf="@id/score_label" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:background="@drawable/my_order_headline_with_divider" android:layout_width="fill_parent" android:layout_height="9.0dip" android:layout_alignParentBottom="true" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0sp" android:textColor="@color/black" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="43.0dip" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" android:text="@string/my_order_detail_price_info" />
+        <View android:background="#ffd5d5d5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="12.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/priceInfoLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" />
+        <View android:background="@color/divider_gray" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginTop="10.0dip" />
+        <RelativeLayout android:id="@id/get_invoice" android:background="@color/white" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="43.0dip">
+            <TextView android:textSize="14.0sp" android:textColor="@color/red_db384" android:id="@id/get_invoice_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/arrow_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/arrow_right" android:scaleType="center" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:background="@drawable/my_order_headline_with_divider" android:layout_width="fill_parent" android:layout_height="9.0dip" />
+    <View android:id="@id/footerMore" android:layout_width="fill_parent" android:layout_height="58.0dip" />
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false">
+            <LinearLayout android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <View android:layout_gravity="center" android:id="@id/left_line" android:background="@color/gray_a" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <View android:layout_gravity="center" android:id="@id/right_line" android:background="@color/gray_a" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:id="@id/center_circle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/shape_circle_gray_white" android:scaleType="center" android:contentDescription="@null" />
+    </FrameLayout>
+    <TextView android:textSize="@dimen/micro_text_size" android:textColor="@color/gray_3c3c3c" android:gravity="center" android:id="@id/date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="0.0dip" android:text="@string/test_progress_time" android:singleLine="true" />
+    <TextView android:textSize="@dimen/micro_text_size" android:textColor="@color/gray_3c3c3c" android:gravity="center" android:id="@id/time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="0.0dip" android:text="@string/test_progress_time" android:singleLine="true" />
+    <TextView android:textSize="@dimen/micro_text_size" android:textColor="@color/red_f22e00" android:gravity="center" android:id="@id/content" android:paddingLeft="1.0dip" android:paddingRight="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="15.0dip" />
+</LinearLayout>

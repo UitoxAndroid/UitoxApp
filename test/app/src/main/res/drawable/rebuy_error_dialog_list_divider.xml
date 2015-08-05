@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:left="@dimen/rebuy_error_dialog_divider_padding_horizontal" android:right="@dimen/rebuy_error_dialog_divider_padding_horizontal">
+        <shape>
+            <gradient android:startColor="#ffd0f0f6" android:endColor="#ffd0f0f6" android:centerColor="#ff87ceeb" />
+        </shape>
+    </item>
+</layer-list>

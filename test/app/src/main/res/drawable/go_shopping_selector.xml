@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#ffd8384c" />
+            <corners android:topLeftRadius="3.0dip" android:topRightRadius="3.0dip" android:bottomLeftRadius="3.0dip" android:bottomRightRadius="3.0dip" />
+            <padding android:left="5.0dip" android:top="5.0dip" android:right="5.0dip" android:bottom="5.0dip" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="#ffd8384c" />
+            <corners android:topLeftRadius="3.0dip" android:topRightRadius="3.0dip" android:bottomLeftRadius="3.0dip" android:bottomRightRadius="3.0dip" />
+            <padding android:left="5.0dip" android:top="5.0dip" android:right="5.0dip" android:bottom="5.0dip" />
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="#ff888888" />
+            <corners android:topLeftRadius="3.0dip" android:topRightRadius="3.0dip" android:bottomLeftRadius="3.0dip" android:bottomRightRadius="3.0dip" />
+            <padding android:left="5.0dip" android:top="5.0dip" android:right="5.0dip" android:bottom="5.0dip" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/red_db384" />
+            <corners android:topLeftRadius="3.0dip" android:topRightRadius="3.0dip" android:bottomLeftRadius="3.0dip" android:bottomRightRadius="3.0dip" />
+            <padding android:left="5.0dip" android:top="5.0dip" android:right="5.0dip" android:bottom="5.0dip" />
+        </shape>
+    </item>
+</selector>

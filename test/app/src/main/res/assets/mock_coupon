@@ -1,0 +1,110 @@
+{
+    "elapsedTime": "0.5819",
+    "errorCode": 0,
+    "errorDesc": "成功",
+    "body": {
+        "pointList": {
+            "self_support": [
+                {
+                    "merchantName": "飞牛网自营",
+                    "pointId": "201502C0200002281",
+                    "pointName": "小明专用",
+                    "value": 10,
+                    "canUse": "10.00",
+                    "effectdt": "2015-02-04",
+                    "deadline": "2015-12-30",
+                    "type": 1,
+                    "will_expire": 0
+                },
+                {
+                    "merchantName": "飞牛网自营",
+                    "pointId": "1234545665",
+                    "pointName": "假数据专用",
+                    "value": "100.00",
+                    "canUse": "10.00",
+                    "effectdt": "2015-5-16",
+                    "deadline": "2015-5-23",
+                    "type": 2,
+                    "will_expire": 1
+                }
+            ],
+            "jaMallVoucher": [
+                [ 
+                    {
+                        "merchantName": "商家名称假数据1",
+                        "pointId": "f5cdP1U6Do6000v",
+                        "pointName": "满100减20",
+                        "value": 20,
+                        "canUse": "20.00",
+                        "effectdt": "2608-07-18",
+                        "deadline": "2608-07-19",
+                        "type": 4,
+                        "will_expire": 0
+                    },
+                    {
+                        "merchantName": "商家名称假数据1",
+                        "pointId": "f5cdP1U6Do6000w",
+                        "pointName": "满100减20",
+                        "value": 20,
+                        "canUse": "20.00",
+                        "effectdt": "2608-07-18",
+                        "deadline": "2608-07-19",
+                        "type": 4,
+                        "will_expire": 0
+                    }
+                ],
+                [
+                    {
+                        "merchantName": "商城名称假数据2",
+                        "pointId": "1234545646",
+                        "pointName": "假数据专用",
+                        "value": "100.00",
+                        "canUse": "10.00",
+                        "effectdt": "2015-5-16",
+                        "deadline": "2015-5-23",
+                        "type": 4,
+                        "will_expire": 1
+                    }
+                ],
+                [
+                    {
+                        "merchantName": "商城名称假数据3",
+                        "pointId": "1234544566",
+                        "pointName": "假数据专用",
+                        "value": "100.00",
+                        "canUse": "10.00",
+                        "effectdt": "2015-5-16",
+                        "deadline": "2015-5-23",
+                        "type": 4,
+                        "will_expire": 1
+                    }
+                ]
+            ],
+            "jaMallMainVoucher": [
+                {
+                    "merchantName": "商城平台优惠券",
+                    "pointId": "1523454566",
+                    "pointName": "假数据专用",
+                    "value": "100.00",
+                    "canUse": "10.00",
+                    "effectdt": "2015-5-16",
+                    "deadline": "2015-5-23",
+                    "type": 5,
+                    "will_expire": 1
+                },
+                {
+                    "merchantName": "商城平台优惠券",
+                    "pointId": "1723454566",
+                    "pointName": "假数据专用",
+                    "value": "100.00",
+                    "canUse": "10.00",
+                    "effectdt": "2015-5-16",
+                    "deadline": "2015-5-23",
+                    "type": 6,
+                    "will_expire": 1
+                }
+            ]
+        },
+        "cartUsed": 46815.33
+    }
+}

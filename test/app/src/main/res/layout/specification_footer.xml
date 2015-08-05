@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0dip" android:textColor="#ff666666" android:id="@id/tv_qty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <com.feiniu.market.view.NumControl android:id="@id/nc_spec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/bottom_line" android:background="#ffd5d5d5" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/toast_rel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip">
+        <TextView android:textSize="12.0dip" android:textColor="#ffffb467" android:id="@id/tv_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:maxLines="2" android:drawableLeft="@drawable/detail_speci_toast" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="12.0dip" android:textColor="#ffffb467" android:id="@id/tv_limit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:maxLines="2" android:drawableLeft="@drawable/detail_speci_toast" android:layout_below="@id/tv_tips" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pull_to_refresh_from_bottom_pull_label">向下拉加载更多…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="pull_to_refresh_from_bottom_release_label">松开加载更多…</string>
+    <string name="pull_to_refresh_pull_label">向下拉刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">正在加载…</string>
+    <string name="pull_to_refresh_release_label">松开更新…</string>
+    <string name="no_more_to_load">没有更多了，亲！</string>
+    <string name="try_to_load_more">努力加载中...</string>
+</resources>

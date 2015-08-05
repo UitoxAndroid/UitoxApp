@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/rebuy_dialog" android:background="@drawable/rebuy_dialog_frame" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0">
+        <TextView android:textSize="@dimen/rebuy_dialog_title_text_font_size" android:textColor="@color/rebuy_dialog_title_text_color" android:gravity="center" android:id="@id/title" android:paddingTop="@dimen/rebuy_dialog_title_padding" android:paddingBottom="@dimen/rebuy_dialog_title_padding" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <ImageView android:background="@drawable/line_red" android:layout_width="fill_parent" android:layout_height="@dimen/rebuy_title_bar_separator" android:layout_weight="0.0" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/rebuy_dialog_tips_text_font_size" android:textColor="@color/rebuy_dialog_tips_text_color" android:gravity="center_vertical" android:id="@id/tips" android:paddingLeft="@dimen/rebuy_dialog_padding_horizontal" android:paddingTop="@dimen/rebuy_dialog_padding_vertical" android:paddingRight="@dimen/rebuy_dialog_padding_horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:lineSpacingExtra="@dimen/rebuy_dialog_tips_text_line_spacing_extra" android:lineSpacingMultiplier="1.05" />
+    <include layout="@layout/rebuy_dialog_button" />
+</LinearLayout>

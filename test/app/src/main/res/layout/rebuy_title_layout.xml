@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/title_bar" android:background="@color/color_search_bg" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/title_bar_text_size" android:textColor="@color/text_click_black_gray" android:gravity="center_vertical" android:id="@id/text_back" android:paddingLeft="1.0dip" android:paddingRight="@dimen/rebuy_back_text_padding_right" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/rebuy_back_margin_left" android:minWidth="60.0dip" android:drawableLeft="@drawable/title_img_back" android:drawablePadding="@dimen/rebuy_back_drawable_padding" android:layout_weight="0.0" />
+            <TextView android:textSize="@dimen/title_bar_text_size" android:textColor="@color/title_bar_title_black" android:ellipsize="end" android:gravity="center" android:id="@id/rebuy_title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/rebuy_title" android:lines="2" android:layout_weight="1.0" />
+            <ImageView android:id="@id/img_category" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/rebuy_category_margin_top" android:layout_marginRight="@dimen/rebuy_category_margin_right" android:layout_marginBottom="@dimen/rebuy_category_margin_bottom" android:src="@drawable/rebuy_category_img" android:minWidth="60.0dip" android:layout_weight="0.0" android:contentDescription="@string/rebuy_category_content_description" />
+        </LinearLayout>
+        <View android:id="@id/title_bar_separator" android:background="@color/green_D5D5D5" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    </LinearLayout>
+</merge>

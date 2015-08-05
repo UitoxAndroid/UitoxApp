@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root" android:background="@color/app_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_gravity="top" android:layout_width="fill_parent" android:layout_height="50.0dip" layout="@layout/titlebar_normal" />
+    <RelativeLayout android:background="@color/white" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="@dimen/medium_text_size" android:textColor="@color/darkgray" android:gravity="center" android:id="@id/auth_code_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/had_sennd_auth_code_label" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/medium_text_size" android:textColor="@color/darkgray" android:id="@id/username" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/auth_code_label" android:layout_centerVertical="true" />
+        <View android:background="#44444444" android:layout_width="1.0dip" android:layout_height="50.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/retrieve_auth_code" />
+        <TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/text_click_black_gray" android:gravity="center" android:id="@id/retrieve_auth_code" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:layout_marginRight="12.0dip" android:text="@string/text_bt_refresh_auth_code" android:lines="2" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/white" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:background="#44444444" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/white" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginRight="10.0dip">
+        <TextView android:textSize="@dimen/medium_text_size" android:gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/auth_code" />
+        <com.feiniu.market.view.ClearEditText android:textSize="@dimen/medium_text_size" android:id="@id/auth_code" android:background="@null" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:hint="@string/auth_code_hint" android:singleLine="true" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/large_text_size" android:textColor="@color/text_click_white_black" android:gravity="center" android:id="@id/next_step" android:background="@drawable/go_shopping_selector" android:clickable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="10.0dip" android:text="@string/next_step" />
+</LinearLayout>

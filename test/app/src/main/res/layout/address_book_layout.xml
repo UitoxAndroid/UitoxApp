@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="50.0dip" layout="@layout/titlebar_normal" />
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="60.0dip" android:layout_marginRight="40.0dip">
+        <TextView android:textSize="@dimen/small_text_size" android:id="@id/support_set_time_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ListView android:id="@id/address_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:dividerHeight="0.0dip" />
+</LinearLayout>

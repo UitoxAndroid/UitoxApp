@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/root" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:background="@color/gray_c7c7cc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+            <FrameLayout android:background="@drawable/coupon_buy_left_icon" android:layout_width="70.0dip" android:layout_height="100.0dip">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <TextView android:textSize="@dimen/small_text_size" android:textColor="#ff696969" android:gravity="center" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="@string/coupon_item_name" android:layout_weight="1.0" android:fontFamily="sans-serif" />
+                    <TextView android:textSize="@dimen/medium_text_size" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/left_coupon_amount" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="3.0" android:fontFamily="sans-serif" />
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+                <TextView android:textSize="15.0sp" android:textColor="#ff696969" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/coupon_activity_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:layout_weight="1.0" android:fontFamily="sans-serif" />
+                <TextView android:textSize="15.0sp" android:textColor="#ff696969" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/right_coupon_amount" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" android:fontFamily="sans-serif" />
+                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/gray_9c9c9c" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/coupon_deadline" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" android:fontFamily="sans-serif" />
+                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/red_db384" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/deadline_hint" android:background="@drawable/coupon_expire_hint_frame" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/coupon_item_expire_hint" android:singleLine="true" android:layout_weight="0.0" android:fontFamily="sans-serif" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:background="@color/gray_c7c7cc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center|right" android:id="@id/selection_tip" android:visibility="gone" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/payment_list_check" />
+</FrameLayout>

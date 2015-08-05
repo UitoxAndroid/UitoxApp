@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/empty_cart" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="100.0dip" android:src="@drawable/shopping_cart_empty_cart" android:layout_weight="1.0" />
+        <LinearLayout android:gravity="center|left" android:layout_gravity="center" android:orientation="vertical" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0">
+            <TextView android:textSize="18.0sp" android:textColor="#ff999999" android:gravity="center|left" android:layout_width="wrap_content" android:layout_height="0.0dip" android:text="    您还没有购买过商品，" android:layout_weight="1.0" />
+            <TextView android:textSize="18.0sp" android:textColor="#ff999999" android:gravity="center|left" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="0.0dip" android:text="    开始您的购物之旅吧" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="20.0sp" android:textColor="@color/text_click_white_gray" android:gravity="center" android:id="@id/go_home" android:background="@drawable/shopping" android:layout_width="160.0dip" android:layout_height="40.0dip" android:text="去  逛  逛" android:layout_below="@id/empty_cart" android:layout_centerHorizontal="true" />
+</RelativeLayout>

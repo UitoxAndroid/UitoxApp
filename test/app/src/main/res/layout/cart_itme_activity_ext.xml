@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="48.0dip" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="20.0dip">
+        <TextView android:textSize="10.0sp" android:textColor="@color/white" android:gravity="center" android:background="@color/red_db384" android:layout_width="26.0dip" android:layout_height="wrap_content" android:text="活动" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/darkgray_6" android:gravity="center_vertical" android:id="@id/cart_item_extra_name3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:maxLines="1" android:layout_weight="1.0" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/darkgray_6" android:gravity="center_vertical" android:id="@id/cart_item_activity_discount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="60.0dip" android:layout_marginRight="28.0dip" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:background="@color/white" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/medium_text_size" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginBottom="5.0dip" android:text="2014/06/28" android:singleLine="true" />
+    <TextView android:textSize="@dimen/medium_text_size" android:gravity="center_vertical" android:id="@id/desc" android:layout_width="wrap_content" android:layout_height="30.0dip" android:text="飞牛抵用券" android:layout_below="@id/date" />
+    <TextView android:textSize="@dimen/medium_text_size" android:textColor="#ffff0000" android:gravity="center_vertical" android:id="@id/point" android:layout_width="wrap_content" android:layout_height="30.0dip" android:text="+100" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>
