@@ -103,8 +103,12 @@ public class GsonRequest<T> extends Request<T> {
                 return Response.success(gson.fromJson(json, clazz), HttpHeaderParser.parseCacheHeaders(networkResponse));
             }
         } catch (UnsupportedEncodingException e) {
+            Log.i("GsonRequest","UnsupportedEncodingException");
+            Log.i("GsonRequest",e.getMessage());
             return Response.error(new ParseError(e));
         } catch (JsonSyntaxException e) {
+            Log.i("GsonRequest","JsonSyntaxException");
+            Log.i("GsonRequest",e.getMessage());
             return Response.error(new ParseError(e));
         }
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uitox.fb.myapplication" >
+    package="com.uitox.asap" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -41,6 +41,10 @@
         <activity
             android:name=".ArrayListActivity"
             android:label="@string/title_activity_array_list" >
+        </activity>
+        <activity
+            android:name=".ArrayListAcrivity"
+            android:label="@string/title_activity_array_list_acrivity" >
         </activity>
     </application>
 

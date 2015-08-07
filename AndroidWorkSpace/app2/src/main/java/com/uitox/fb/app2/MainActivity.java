@@ -2,12 +2,13 @@ package com.uitox.fb.app2;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Gallery;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -27,6 +28,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
+    private Gallery gallery;
     private List<Movie> movieList = new ArrayList<Movie>();
     private MyAdapter adapter;
 
@@ -47,25 +49,61 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ShowYourMessage.msgToShowShort(getApplicationContext(), "[OnItemClickListener]：" + movieList.get(position).getTitle());
             }
         });
 
+        gallery = (Gallery) findViewById(R.id.gallery);
+        gallery.setAdapter(adapter);
         //data
-        getdate();
+        getdate2();
 
         //tost
-        //ShowYourMessage.msgToShowShort(this, "i'm app 2");
+        ShowYourMessage.msgToShowShort(this, "i'm app 2");
 
         //dialog
         ShowYourDialog dialog = new ShowYourDialog(this);
         dialog.ShowDialog();
     }
 
+    //單筆解析
+    //大部分不會用在view列表才是
     public void getdate(){
+        HashMap<String, String> hashMap = new HashMap<String, String>();
+        hashMap.put("un", "852041173");
+        hashMap.put("pw", "852041173abc111");
+
+        GsonRequest<Movie> notifyRequest = new GsonRequest<Movie>(
+                Request.Method.POST,
+                "http://www.shihjie.com/phpinfo.php",
+                Movie.class,
+                null,
+                new Response.Listener<Movie>() {
+                    @Override
+                    public void onResponse(Movie response) {
+                        Log.i("test", response.getTitle());
+                        ArrayList<String> genre = response.getGenre();
+                        for(String res: genre){
+                            Log.i("test", res);
+                        }
+                        movieList.add(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        ShowYourMessage.msgToShowShort(MainActivity.this, "ERROR");
+                    }
+                },hashMap);
+        NetWorkTool.getInstance(this).addToRequestQueue(notifyRequest);
+    }
+
+    //多筆解析
+    //大部分會用在listview
+    public void getdate2(){
         HashMap<String, String> hashMap = new HashMap<String, String>();
         hashMap.put("un", "852041173");
         hashMap.put("pw", "852041173abc");
@@ -79,35 +117,16 @@ public class MainActivity extends AppCompatActivity {
                 new GsonRequest.OnListResponseListener<Movie>() {
                     @Override
                     public void onResponse(List<Movie> response) {
-
                         for(Movie res: response){
                             movieList.add(res);
                         }
-
-                        /*for (int i = 0; i < response.size(); i++) {
-                            Movie movie = new Movie();
-                            movie.setTitle(response.get(i).getTitle());
-                            movie.setImageUrl(response.get(i).getImageUrl());
-                            movie.setRating(((Number) response.get(i).getRating()).doubleValue());
-                            movie.setYear(response.get(i).getYear());*/
-
-
-                            /*List Genre = response.get(i).getGenre();
-                            ArrayList<String> genre = new ArrayList<String>();
-                            for (int j = 0; j < Genre.size(); j++) {
-                                genre.add((String) Genre.get(j));
-                            }
-                            movie.setGenre(genre);
-
-                            movieList.add(response.get(i));
-                        }*/
                         adapter.notifyDataSetChanged();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+                        ShowYourMessage.msgToShowShort(MainActivity.this, "ERROR");
                     }
                 },hashMap);
         NetWorkTool.getInstance(this).addToRequestQueue(notifyRequest);
@@ -121,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }

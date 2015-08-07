@@ -11,8 +11,7 @@ public class Movie {
 	public Movie() {
 	}
 
-	public Movie(String name, String image, int year, double rating,
-			ArrayList<String> genre) {
+	public Movie(String name, String image, int year, double rating, ArrayList<String> genre) {
 		this.title = name;
 		this.image = image;
 		this.year = year;

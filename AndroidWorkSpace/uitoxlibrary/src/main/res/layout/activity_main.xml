@@ -1,15 +1,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context="com.example.touchimagetest.MainActivity"
+    tools:ignore="MergeRootFrame">
 
-    <ListView
-        android:id="@+id/list"
+    <!-- TOP -->
+
+    <RelativeLayout
+        android:id="@+id/Content_Layout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/list_divider"
-        android:dividerHeight="1dp"
-        android:listSelector="@drawable/list_row_selector" />
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/MyLayout_bottom"
+        android:layout_below="@+id/Top_Layout"
+        android:background="#EFDFDF"
+        android:gravity="center"
+        android:orientation="horizontal"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Top_Layout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#EFDFDF"
+        android:gravity="center"
+        android:orientation="horizontal"></RelativeLayout>
+
+    <include android:id="@+id/main1" layout="@layout/tab_icon" />
 
 </RelativeLayout>
