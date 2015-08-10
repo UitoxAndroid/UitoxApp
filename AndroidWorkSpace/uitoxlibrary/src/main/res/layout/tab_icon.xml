@@ -34,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:src="@drawable/tab_icon_0_normal" />
+                />
 
                 <TextView
                     android:id="@+id/textview_index"
@@ -58,7 +58,7 @@
                     android:id="@+id/image_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/tab_icon_0_normal" />
+                />
 
                 <TextView
                     android:id="@+id/textview_info"
@@ -83,7 +83,7 @@
                     android:layout_height="match_parent"
                     android:cropToPadding="false"
                     android:paddingTop="5dp"
-                    android:src="@drawable/tab_icon_0_normal" />
+                />
 
                 <TextView
                     android:id="@+id/textview_config"
@@ -107,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:src="@drawable/tab_icon_0_normal" />
+                />
 
                 <TextView
                     android:id="@+id/textview_config3"
@@ -130,7 +130,7 @@
                     android:id="@+id/image_config2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/tab_icon_0_normal" />
+                />
 
                 <TextView
                     android:id="@+id/textview_config2"
