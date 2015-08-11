@@ -13,11 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Gallery;
+import android.widget.GridView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -46,14 +50,17 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> names;
     ArrayAdapter<String> adapter_c;
     String url;
+    ScrollView sv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("首頁");
-        setContentView(R.layout.list_view_layout);
+        //setContentView(R.layout.list_view_layout);
+        setContentView(R.layout.index);
+        sv = (ScrollView) findViewById(R.id.scrollView);
 
-        auto_tv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
+        auto_tv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView2);
         auto_tv.setThreshold(0);
 
         names = new ArrayList<String>();
@@ -80,8 +87,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        listView = (ListView) findViewById(R.id.list);
+        listView = (ListView) findViewById(R.id.listView2);
         adapter = new MyAdapter<Movie>(this, movieList, R.layout.list_row) {
             @Override
             public void convert(ViewHolder holder, Movie movie, View convertView) {
@@ -93,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -100,7 +107,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        gallery = (Gallery) findViewById(R.id.gallery);
+        GridView grid = (GridView) findViewById(R.id.gridView);
+        grid.setAdapter(adapter);
+
+        gallery = (Gallery) findViewById(R.id.gallery2);
         gallery.setAdapter(adapter);
         gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -117,6 +127,28 @@ public class MainActivity extends AppCompatActivity {
         //dialog
         ShowYourDialog dialog = new ShowYourDialog(this);
         dialog.ShowDialog();
+    }
+
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+
+        int totalHeight = listView.getPaddingTop() + listView.getPaddingBottom();
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            if (listItem instanceof ViewGroup) {
+                listItem.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT));
+            }
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
     }
 
     //單筆解析
