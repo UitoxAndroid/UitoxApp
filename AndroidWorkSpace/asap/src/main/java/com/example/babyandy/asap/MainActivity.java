@@ -3,22 +3,26 @@ package com.example.babyandy.asap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import com.uitox.com.uitox.adapter.FragmentAdapter;
+import com.uitox.adapter.FragmentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends ActionBarActivity {
 
     private List<Fragment> mFragmentList = new ArrayList<Fragment>();
     private FragmentAdapter mFragmentAdapter;
@@ -30,15 +34,26 @@ public class MainActivity extends FragmentActivity {
     private ContactsFragment ContactsFragment;
     private int currentIndex;
     private int screenWidth;
-
+    private ActionBar actionBar;
+    private ListView lstDrawer;
+    private DrawerLayout layDrawer;
+    private ActionBarDrawerToggle drawerToggle;
+    private String[] drawer_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initActionBar();
         findById();
         init();
         initTabLineWidth();
+    }
+
+    private void initActionBar(){
+        actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
     }
 
     private void findById() {
@@ -60,21 +75,21 @@ public class MainActivity extends FragmentActivity {
         mFragmentAdapter = new FragmentAdapter(this.getSupportFragmentManager(), mFragmentList);
         mPageVp.setAdapter(mFragmentAdapter);
         mPageVp.setCurrentItem(0);
-
+        mPageVp.setOffscreenPageLimit(3);
         mPageVp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             /**
-                         * state滑动中的状态 有三种状态（0，1，2） 1：正在滑动 2：滑动完毕 0：什么都没做。
-                         */
+             * state滑动中的状态 有三种状态（0，1，2） 1：正在滑动 2：滑动完毕 0：什么都没做。
+             */
             @Override
             public void onPageScrollStateChanged(int state) {
 
             }
 
             /**
-                         * position :当前页面，及你点击滑动的页面 offset:当前页面偏移的百分比
-                         * offsetPixels:当前页面偏移的像素位置
-                         */
+             * position :当前页面，及你点击滑动的页面 offset:当前页面偏移的百分比
+             * offsetPixels:当前页面偏移的像素位置
+             */
             @Override
             public void onPageScrolled(int position, float offset, int offsetPixels) {
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) mTabLineIv.getLayoutParams();
@@ -131,7 +146,7 @@ public class MainActivity extends FragmentActivity {
         mTabContactsTv.setTextColor(Color.BLACK);
     }
 
-    public void setPage(View v){
+    public void setPage(View v) {
         int viewpage = Integer.valueOf((String) v.getTag());
         mPageVp.setCurrentItem(viewpage);
     }

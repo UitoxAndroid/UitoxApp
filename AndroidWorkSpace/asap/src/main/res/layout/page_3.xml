@@ -42,7 +42,7 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
 
-                <com.uitox.com.uitox.view.ListViewForScrollView
+                <com.uitox.view.ListViewForScrollView
                     android:id="@+id/listView2"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
@@ -66,7 +66,7 @@
                     android:text="New Button"
                     android:id="@+id/button4" />
 
-                <com.uitox.com.uitox.view.GridViewForScrollView
+                <com.uitox.view.GridViewForScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/gridView" />

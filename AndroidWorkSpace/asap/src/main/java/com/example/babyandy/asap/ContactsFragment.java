@@ -21,10 +21,11 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.uitox.com.uitox.adapter.MyAdapter;
-import com.uitox.com.uitox.adapter.ViewHolder;
-import com.uitox.fb.uitoxlibrary.ShowYourDialog;
-import com.uitox.fb.uitoxlibrary.ShowYourMessage;
+import com.uitox.adapter.MyAdapter;
+import com.uitox.adapter.ViewHolder;
+import com.uitox.http.NetParams;
+import com.uitox.lib.ShowYourDialog;
+import com.uitox.lib.ShowYourMessage;
 import com.uitox.http.GsonRequest;
 import com.uitox.http.NetWorkTool;
 import com.uitox.fb.entity.Movie;
@@ -132,7 +133,7 @@ public class ContactsFragment extends Fragment {
 
         GsonRequest<Movie> notifyRequest = new GsonRequest<Movie>(
                 Request.Method.POST,
-                "http://www.shihjie.com/phpinfo.php",
+                NetParams.getSHIHJIEUrl("/phpinfo.php"),
                 Movie.class,
                 null,
                 new Response.Listener<Movie>() {
@@ -165,7 +166,7 @@ public class ContactsFragment extends Fragment {
         GsonRequest<Movie> notifyRequest = new GsonRequest<Movie>(
                 getActivity(),
                 Request.Method.POST,
-                "http://www.shihjie.com/phpinfo.php",
+                NetParams.getSHIHJIEUrl("/phpinfo.php"),
                 Movie.class,
                 null,
                 new GsonRequest.OnListResponseListener<Movie>() {
@@ -187,7 +188,6 @@ public class ContactsFragment extends Fragment {
     }
 
     public void updateList(String place) {
-        url = "http://www.shihjie.com/phpinfo.php";
         HashMap<String, String> hashMap = new HashMap<String, String>();
         hashMap.put("un", "852041173");
         hashMap.put("pw", "852041173abc");
@@ -195,7 +195,7 @@ public class ContactsFragment extends Fragment {
         GsonRequest<Movie> notifyRequest = new GsonRequest<Movie>(
                 getActivity(),
                 Request.Method.POST,
-                url,
+                NetParams.getSHIHJIEUrl("/phpinfo.php"),
                 Movie.class,
                 null,
                 new GsonRequest.OnListResponseListener<Movie>() {
