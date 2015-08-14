@@ -24,6 +24,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
+
     private List<Fragment> mFragmentList = new ArrayList<Fragment>();
     private FragmentAdapter mFragmentAdapter;
     private ViewPager mPageVp;
