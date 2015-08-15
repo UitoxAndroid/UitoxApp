@@ -1,16 +1,16 @@
 package com.uitox.asap;
 
-import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,9 +18,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.uitox.adapter.MyAdapter;
+import com.uitox.adapter.ViewHolder;
+import com.uitox.fb.entity.Movie;
+import com.uitox.http.GsonRequest;
+import com.uitox.http.NetParams;
+import com.uitox.http.NetWorkTool;
+import com.uitox.lib.ShowYourMessage;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -58,6 +72,10 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
+    //自訂選單
+    private List<Movie> movieList = new ArrayList<Movie>();
+    private MyAdapter adapter;
+
     public NavigationDrawerFragment() {
     }
 
@@ -87,17 +105,18 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(
-                R.layout.fragment_navigation_drawer, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+
+
+        //原本預設的範例選單
+        /*mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
@@ -105,9 +124,55 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section1),
                         getString(R.string.title_section2),
                         getString(R.string.title_section3),
-                }));
+                }));*/
+
+        //可以制訂自己的選單畫面,一樣用listview
+        adapter = new MyAdapter<Movie>(getActivity(), movieList, R.layout.list_row) {
+            @Override
+            public void convert(ViewHolder holder, Movie movie, View convertView) {
+                holder.setText(R.id.title, movie.getTitle())
+                        .setText(R.id.releaseYear, String.valueOf(movie.getYear()))
+                        .setText(R.id.rating, String.valueOf(movie.getRating()))
+                        .setText(R.id.genre, movie.getGenre())
+                        .setImageUrl(R.id.thumbnail, movie.getImageUrl());
+            }
+        };
+        mDrawerListView.setAdapter(adapter);
+
+        //取資料
+        getdate2();
+
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
+    }
+
+    public void getdate2() {
+        HashMap<String, String> hashMap = new HashMap<String, String>();
+        hashMap.put("un", "852041173");
+        hashMap.put("pw", "852041173abc");
+
+        GsonRequest<Movie> notifyRequest = new GsonRequest<Movie>(
+                getActivity(),
+                Request.Method.POST,
+                NetParams.getSHIHJIEUrl("/phpinfo.php"),
+                Movie.class,
+                null,
+                new GsonRequest.OnListResponseListener<Movie>() {
+                    @Override
+                    public void onResponse(List<Movie> response) {
+                        for (Movie res : response) {
+                            movieList.add(res);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        ShowYourMessage.msgToShowShort(getActivity(), "ERROR");
+                    }
+                }, hashMap);
+        NetWorkTool.getInstance(getActivity()).addToRequestQueue(notifyRequest);
     }
 
     public boolean isDrawerOpen() {

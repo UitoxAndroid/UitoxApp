@@ -1,50 +1,59 @@
 package com.uitox.asap;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.uitox.adapter.FragmentAdapter;
+import com.uitox.lib.ShowYourMessage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
+    //導覽列容器
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
+    //儲存action bar title
     private CharSequence mTitle;
 
+    //action bar
+    private ActionBar actionBar;
+
+    //VIEWPAGER要用的容器
     private List<Fragment> mFragmentList = new ArrayList<Fragment>();
     private FragmentAdapter mFragmentAdapter;
     private ViewPager mPageVp;
+
+    //返回建關閉flag
+    private static Boolean isExit = false;
+    private static Boolean hasTask = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //產生一個導覽列容器
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+
+        //預設取APP名字
         mTitle = getTitle();
 
-        // Set up the drawer.
+        // 綁定導覽
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 
+        //產生VIEWPAGER
         mPageVp = (ViewPager) findViewById(R.id.view_pager);
         mFragmentList.add(new ChatFragment());
         mFragmentList.add(new FriendFragment());
@@ -56,25 +65,34 @@ public class MainActivity extends AppCompatActivity
         mPageVp.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
+                //無論選到哪個都變換TITLE
+                onSectionAttached(position);
+
+                //更改ACTIONBAR TITLE
+                actionBar.setTitle(mTitle);
                 invalidateOptionsMenu();
             }
         });
     }
 
+    //選到選單時要觸發的事件
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        /*FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.view_page, PlaceholderFragment.newInstance(position + 1))
-                .commit();*/
+        //更改原本寫法,因為要用VIEWPAGER的方式,因此直接調用mPageVp.setCurrentItem切換既可
         if (mPageVp != null) {
             mPageVp.setCurrentItem(position);
         }
+
+        //無論選到哪個都變換TITLE
+        onSectionAttached(position);
     }
 
+    //選到選單後要顯示的title
     public void onSectionAttached(int number) {
         switch (number) {
+            case 0:
+                mTitle = "首頁";
+                break;
             case 1:
                 mTitle = getString(R.string.title_section1);
                 break;
@@ -87,20 +105,19 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //重新配置actionbar
     public void restoreActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(mTitle);
     }
 
-
+    //產生右上角的menu選單
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            // Only show items in the action bar relevant to this screen
-            // if the drawer is not showing. Otherwise, let the drawer
-            // decide what to show in the action bar.
             getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
             return true;
@@ -108,59 +125,48 @@ public class MainActivity extends AppCompatActivity
         return super.onCreateOptionsMenu(menu);
     }
 
+    //當右上角的選單被選取後的觸發事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // 指定要呼叫的 Activity Class
+            Intent newAct = new Intent();
+            newAct.setClass( MainActivity.this, SettingActivity.class );
+
+            // 呼叫新的 Activity Class
+            startActivity( newAct );
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
+    //設定時間監聽返回鍵
+    Timer tExit = new Timer();
+    TimerTask task = new TimerTask() {
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
+        public void run() {
+            isExit = false;
+            hasTask = true;
+         }
+    };
 
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
+    //返回健要連按兩次才會退出,其餘失效
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (isExit == false) {
+                isExit = true;
+                ShowYourMessage.msgToShowShort(this,"再按一次後退鍵退出應用程式");
+                if (!hasTask) {
+                    tExit.schedule(task, 2000);
+                }
+            } else {
+                finish();
+            }
         }
+        return false;
     }
-
 }

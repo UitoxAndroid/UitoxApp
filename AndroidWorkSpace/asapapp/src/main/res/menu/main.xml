@@ -1,8 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_example" android:title="@string/action_example"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_example"
+        android:title="@string/action_example"
         app:showAsAction="withText|ifRoom" />
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <!--1、always：這個值會使功能表項目一直顯示在Action Bar上。
+    2、ifRoom：如果有足夠的空間，這個值會使功能表項目顯示在Action Bar上。
+    3、never：這個值使功能表項目永遠都不出現在Action Bar上。
+    4、withText：這個值使功能表項目和它的圖示，功能表文本一起顯示。-->
 </menu>

@@ -5,13 +5,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.uitox.lib.ShowYourMessage;
 
 import java.util.HashMap;
 
@@ -54,11 +54,20 @@ public class ChatFragment extends Fragment implements BaseSliderView.OnSliderCli
         return view;
     }
 
+    //點到banner時要做的事情
     @Override
     public void onSliderClick(BaseSliderView slider) {
-        Toast.makeText(getActivity(),slider.getBundle().get("extra") + "",Toast.LENGTH_SHORT).show();
+        ShowYourMessage.msgToShowShort(getActivity(),slider.getBundle().get("extra") + "");
     }
 
+    //APP要回到主要activity時必須要讓動畫跑起來,因為在stop已經關掉
+    @Override
+    public void onResume() {
+        sliderShow.startAutoCycle();
+        super.onResume();
+    }
+
+    //當activity要停止時,動畫也跟著停止
     @Override
     public void onStop() {
         sliderShow.stopAutoCycle();
@@ -67,16 +76,16 @@ public class ChatFragment extends Fragment implements BaseSliderView.OnSliderCli
 
     @Override
     public void onPageScrolled(int i, float v, int i1) {
-
+        ShowYourMessage.msgToShowShort(getActivity(),"onPageScrolled");
     }
 
     @Override
     public void onPageSelected(int i) {
-
+        ShowYourMessage.msgToShowShort(getActivity(),"onPageSelected");
     }
 
     @Override
     public void onPageScrollStateChanged(int i) {
-
+        ShowYourMessage.msgToShowShort(getActivity(),"onPageScrollStateChanged");
     }
 }

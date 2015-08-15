@@ -42,7 +42,6 @@ public class ContactsFragment extends Fragment {
     AutoCompleteTextView auto_tv;
     ArrayList<String> names;
     ArrayAdapter<String> adapter_c;
-    String url;
     ScrollView sv;
 
     public ContactsFragment() {
