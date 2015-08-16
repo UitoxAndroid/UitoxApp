@@ -27,7 +27,6 @@ import com.uitox.fb.entity.Movie;
 import com.uitox.http.GsonRequest;
 import com.uitox.http.NetParams;
 import com.uitox.http.NetWorkTool;
-import com.uitox.lib.ShowYourDialog;
 import com.uitox.lib.ShowYourMessage;
 
 import java.util.ArrayList;
@@ -115,11 +114,11 @@ public class ContactsFragment extends Fragment {
         getdate2();
 
         //tost
-        ShowYourMessage.msgToShowShort(getActivity(), "i'm app 2");
+        //ShowYourMessage.msgToShowShort(getActivity(), "i'm app 2");
 
         //dialog
-        ShowYourDialog dialog = new ShowYourDialog(getActivity());
-        dialog.ShowDialog();
+        //ShowYourDialog dialog = new ShowYourDialog(getActivity());
+        //dialog.ShowDialog();
 
         return view;
     }

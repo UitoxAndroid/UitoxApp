@@ -7,15 +7,16 @@
     tools:context=".MainActivity">
 
 
-    <!--FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" /-->
+    <include
+        android:id="@+id/tablayout"
+        layout="@layout/top_menu_layout" />
 
+    <!--使用自訂的ViewPagerAdapter...com.uitox.adapter.ViewPagerAdapter...-->
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+
 
     <fragment
         android:id="@+id/navigation_drawer"

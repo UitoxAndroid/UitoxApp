@@ -1,5 +1,6 @@
 package com.uitox.asap;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,21 +18,31 @@ import java.util.HashMap;
 
 public class ChatFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
     SliderLayout sliderShow;
+    View rootView;
+
     public ChatFragment() {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.page_1, container, false);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+    }
 
-        sliderShow = (SliderLayout) view.findViewById(R.id.banner);
-        HashMap<String,String> url_maps = new HashMap<String, String>();
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        if(rootView == null) {
+            rootView = inflater.inflate(R.layout.page_1, container, false);
+        }
+
+        sliderShow = (SliderLayout) rootView.findViewById(R.id.banner);
+        HashMap<String, String> url_maps = new HashMap<String, String>();
         url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
         url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
         url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
         url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
 
-        for(String name : url_maps.keySet()){
+        for (String name : url_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(getActivity());
             // initialize a SliderLayout
             textSliderView
@@ -51,13 +62,14 @@ public class ChatFragment extends Fragment implements BaseSliderView.OnSliderCli
         sliderShow.setCustomAnimation(new DescriptionAnimation());
         sliderShow.setDuration(4000);
         sliderShow.addOnPageChangeListener(this);
-        return view;
+
+        return rootView;
     }
 
     //點到banner時要做的事情
     @Override
     public void onSliderClick(BaseSliderView slider) {
-        ShowYourMessage.msgToShowShort(getActivity(),slider.getBundle().get("extra") + "");
+        ShowYourMessage.msgToShowShort(getActivity(), slider.getBundle().get("extra") + "");
     }
 
     //APP要回到主要activity時必須要讓動畫跑起來,因為在stop已經關掉
@@ -76,16 +88,16 @@ public class ChatFragment extends Fragment implements BaseSliderView.OnSliderCli
 
     @Override
     public void onPageScrolled(int i, float v, int i1) {
-        ShowYourMessage.msgToShowShort(getActivity(),"onPageScrolled");
+        //ShowYourMessage.msgToShowShort(getActivity(),"onPageScrolled");
     }
 
     @Override
     public void onPageSelected(int i) {
-        ShowYourMessage.msgToShowShort(getActivity(),"onPageSelected");
+        //ShowYourMessage.msgToShowShort(getActivity(),"onPageSelected");
     }
 
     @Override
     public void onPageScrollStateChanged(int i) {
-        ShowYourMessage.msgToShowShort(getActivity(),"onPageScrollStateChanged");
+        //ShowYourMessage.msgToShowShort(getActivity(),"onPageScrollStateChanged");
     }
 }

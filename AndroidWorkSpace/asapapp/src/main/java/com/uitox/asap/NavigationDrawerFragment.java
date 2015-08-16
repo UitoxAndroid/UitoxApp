@@ -30,7 +30,6 @@ import com.uitox.fb.entity.Movie;
 import com.uitox.http.GsonRequest;
 import com.uitox.http.NetParams;
 import com.uitox.http.NetWorkTool;
-import com.uitox.lib.ShowYourMessage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -169,7 +168,7 @@ public class NavigationDrawerFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        ShowYourMessage.msgToShowShort(getActivity(), "ERROR");
+                        //ShowYourMessage.msgToShowShort(getActivity(), "ERROR");
                     }
                 }, hashMap);
         NetWorkTool.getInstance(getActivity()).addToRequestQueue(notifyRequest);
@@ -177,6 +176,12 @@ public class NavigationDrawerFragment extends Fragment {
 
     public boolean isDrawerOpen() {
         return mDrawerLayout != null && mDrawerLayout.isDrawerOpen(mFragmentContainerView);
+    }
+
+    //新增一個關閉功能
+    public boolean close() {
+        mDrawerLayout.closeDrawer(mFragmentContainerView);
+        return true;
     }
 
     /**

@@ -5,13 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/top_menu" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/tab1"
+            layout="@layout/top_menu_layout" />
+    </LinearLayout>
 
     <com.daimajia.slider.library.SliderLayout
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        />
+        android:layout_height="200dp" />
 
     <TextView
         android:layout_width="match_parent"

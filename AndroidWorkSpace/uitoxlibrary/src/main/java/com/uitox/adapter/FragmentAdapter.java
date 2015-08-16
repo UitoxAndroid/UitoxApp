@@ -14,15 +14,16 @@ import java.util.List;
 public class FragmentAdapter extends FragmentPagerAdapter {
 
     List<Fragment> fragmentList = new ArrayList<Fragment>();
-
+    private FragmentManager fm;
     public FragmentAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
         this.fragmentList = fragmentList;
+        this.fm=fm;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return fragmentList.get(position);
+        return fragmentList.get(position%fragmentList.size());
     }
 
     @Override
@@ -30,5 +31,8 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         return fragmentList.size();
     }
 
-
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;  //没有找到child要求重新加载
+    }
 }

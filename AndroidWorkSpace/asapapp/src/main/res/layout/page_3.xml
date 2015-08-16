@@ -5,32 +5,23 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/search" />
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:singleLine="true"
-            android:text="" />
+        <include
+            layout="@layout/top_menu_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tab3"/>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linearLayout4"
+        android:layout_below="@+id/autoCompleteTextView2"
         android:orientation="vertical">
 
         <ScrollView
@@ -40,79 +31,78 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <com.uitox.view.ListViewForScrollView
                     android:id="@+id/listView2"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    />
+                    android:layout_height="400dp" />
 
                 <Button
+                    android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button3" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button4" />
+                    android:text="New Button" />
 
                 <com.uitox.view.GridViewForScrollView
+                    android:id="@+id/gridView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/gridView" />
+                    android:layout_height="wrap_content" />
 
                 <Button
+                    android:id="@+id/button10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button10" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button9" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button8" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button7" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button6" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button5" />
+                    android:text="New Button" />
 
                 <Button
+                    android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button2" />
+                    android:text="New Button" />
 
                 <Gallery
                     android:id="@+id/gallery2"
@@ -123,5 +113,27 @@
         </ScrollView>
 
     </LinearLayout>
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:text=""
+        android:layout_below="@+id/linearLayout2"
+        android:layout_toEndOf="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/search" />
 
 </RelativeLayout>
