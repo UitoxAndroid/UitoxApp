@@ -1,8 +1,6 @@
 package com.uitox.asap;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,36 +10,23 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.uitox.adapter.BaseFragment;
 import com.uitox.lib.ShowYourMessage;
 
 import java.util.HashMap;
 
-public class ChatFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+public class ChatFragment extends BaseFragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
     SliderLayout sliderShow;
-    View rootView;
-
-    public ChatFragment() {
-    }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        if(rootView == null) {
-            rootView = inflater.inflate(R.layout.page_1, container, false);
-        }
-
+    public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.page_1, container, false);
         sliderShow = (SliderLayout) rootView.findViewById(R.id.banner);
         HashMap<String, String> url_maps = new HashMap<String, String>();
         url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
         url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
         url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
         url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
-
         for (String name : url_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(getActivity());
             // initialize a SliderLayout
@@ -62,8 +47,17 @@ public class ChatFragment extends Fragment implements BaseSliderView.OnSliderCli
         sliderShow.setCustomAnimation(new DescriptionAnimation());
         sliderShow.setDuration(4000);
         sliderShow.addOnPageChangeListener(this);
-
         return rootView;
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initBundle(Bundle bundle) {
+
     }
 
     //點到banner時要做的事情

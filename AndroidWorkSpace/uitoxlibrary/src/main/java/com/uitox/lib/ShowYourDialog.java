@@ -24,10 +24,10 @@ public class ShowYourDialog extends Activity {
         super.onStop();
     }
 
-    public void ShowDialog() {
+    public void ShowDialog(String title,String Message) {
         AlertDialog alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Alert");
-        alertDialog.setMessage("Alert message to be shown");
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(Message);
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

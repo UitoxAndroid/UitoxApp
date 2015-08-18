@@ -2,18 +2,14 @@ package com.uitox.asap;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Gallery;
-import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -21,6 +17,7 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.uitox.adapter.BaseFragment;
 import com.uitox.adapter.MyAdapter;
 import com.uitox.adapter.ViewHolder;
 import com.uitox.fb.entity.Movie;
@@ -33,11 +30,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ContactsFragment extends Fragment {
+public class ContactsFragment extends BaseFragment {
     private ListView listView;
     private List<Movie> movieList = new ArrayList<Movie>();
     private MyAdapter adapter;
-    private Gallery gallery;
     AutoCompleteTextView auto_tv;
     ArrayList<String> names;
     ArrayAdapter<String> adapter_c;
@@ -47,7 +43,7 @@ public class ContactsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.page_3, container, false);
 
         sv = (ScrollView) view.findViewById(R.id.scrollView);
@@ -98,66 +94,11 @@ public class ContactsFragment extends Fragment {
                 ShowYourMessage.msgToShowShort(getActivity(), "[OnItemClickListener]：" + movieList.get(position).getTitle());
             }
         });
-
-        GridView grid = (GridView) view.findViewById(R.id.gridView);
-        grid.setAdapter(adapter);
-
-        gallery = (Gallery) view.findViewById(R.id.gallery2);
-        gallery.setAdapter(adapter);
-        gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ShowYourMessage.msgToShowShort(getActivity(), "[OnItemClickListener]：" + movieList.get(position).getTitle());
-            }
-        });
-        //data
-        getdate2();
-
-        //tost
-        //ShowYourMessage.msgToShowShort(getActivity(), "i'm app 2");
-
-        //dialog
-        //ShowYourDialog dialog = new ShowYourDialog(getActivity());
-        //dialog.ShowDialog();
-
         return view;
     }
 
-    //單筆解析
-    //大部分不會用在view列表才是
-    public void getdate() {
-        HashMap<String, String> hashMap = new HashMap<String, String>();
-        hashMap.put("un", "852041173");
-        hashMap.put("pw", "852041173abc111");
-
-        GsonRequest<Movie> notifyRequest = new GsonRequest<Movie>(
-                Request.Method.POST,
-                NetParams.getSHIHJIEUrl("/phpinfo.php"),
-                Movie.class,
-                null,
-                new Response.Listener<Movie>() {
-                    @Override
-                    public void onResponse(Movie response) {
-                        Log.i("test", response.getTitle());
-                        ArrayList<String> genre = response.getGenre();
-                        for (String res : genre) {
-                            Log.i("test", res);
-                        }
-                        movieList.add(response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-                        ShowYourMessage.msgToShowShort(getActivity(), "ERROR");
-                    }
-                }, hashMap);
-        NetWorkTool.getInstance(getActivity()).addToRequestQueue(notifyRequest);
-    }
-
-    //多筆解析
-    //大部分會用在listview
-    public void getdate2() {
+    @Override
+    public void initData() {
         HashMap<String, String> hashMap = new HashMap<String, String>();
         hashMap.put("un", "852041173");
         hashMap.put("pw", "852041173abc");
@@ -184,6 +125,11 @@ public class ContactsFragment extends Fragment {
                     }
                 }, hashMap);
         NetWorkTool.getInstance(getActivity()).addToRequestQueue(notifyRequest);
+    }
+
+    @Override
+    public void initBundle(Bundle bundle) {
+
     }
 
     public void updateList(String place) {

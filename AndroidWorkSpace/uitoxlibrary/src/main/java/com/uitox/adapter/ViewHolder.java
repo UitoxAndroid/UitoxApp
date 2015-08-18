@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.uitox.fb.uitoxlibrary.R;
 import com.uitox.http.NetWorkTool;
+import com.uitox.uitoxlibrary.R;
 
 import java.util.List;
 

@@ -35,4 +35,5 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     public int getItemPosition(Object object) {
         return POSITION_NONE;  //没有找到child要求重新加载
     }
+
 }

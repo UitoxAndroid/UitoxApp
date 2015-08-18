@@ -1,25 +1,24 @@
 package com.uitox.asap;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.uitox.adapter.BaseFragment;
 import com.uitox.http.ToJsonString;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class FriendFragment extends Fragment {
+public class FriendFragment extends BaseFragment {
 
     public FriendFragment() {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+    protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.page_2, container, false);
 
         HashMap<String, String> hashMap = new HashMap<>();
@@ -46,4 +45,15 @@ public class FriendFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initBundle(Bundle bundle) {
+
+    }
+
 }

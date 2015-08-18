@@ -1,1 +1,1 @@
-include ':facebook', ':uitoxlibrary', ':entity', ':asap', ':asapapp'
+include ':facebook', ':uitoxlibrary', ':entity', ':asapapp'

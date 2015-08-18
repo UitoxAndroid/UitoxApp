@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,10 +25,11 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends AppCompatActivity implements NavigationDrawerFragmentLeft.NavigationDrawerCallbacks,NavigationDrawerFragmentRight.NavigationDrawerCallbacks {
 
     //導覽列容器
-    private NavigationDrawerFragment mNavigationDrawerFragment;
+    private NavigationDrawerFragmentLeft mNavigationDrawerFragmentLeft;
+    private NavigationDrawerFragmentRight mNavigationDrawerFragmentRight;
 
     //儲存action bar title
     private CharSequence mTitle;
@@ -64,13 +63,15 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
     //初始化VIEW
     private void initView() {
         //產生一個導覽列容器
-        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mNavigationDrawerFragmentLeft = (NavigationDrawerFragmentLeft) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_left);
+        mNavigationDrawerFragmentRight = (NavigationDrawerFragmentRight) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_right);
 
         //預設取APP名字
         mTitle = getTitle();
 
         // 綁定導覽
-        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+        mNavigationDrawerFragmentLeft.setUp(R.id.navigation_drawer_left, (DrawerLayout) findViewById(R.id.drawer_layout));
+        mNavigationDrawerFragmentRight.setUp(R.id.navigation_drawer_right, (DrawerLayout) findViewById(R.id.drawer_layout));
 
         //產生VIEWPAGER
         mPageVp = (ViewPager) findViewById(R.id.view_pager);
@@ -89,7 +90,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         initViewPager();
 
         //會自動打開....所以關閉
-        mNavigationDrawerFragment.close();
+        mNavigationDrawerFragmentLeft.close();
+        mNavigationDrawerFragmentRight.close();
     }
 
     //動態產生topmenu
@@ -98,12 +100,6 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
             RadioButton rb = (RadioButton) LayoutInflater.from(this).inflate(R.layout.top_menu_row, null);
             rb.setId(i);
             rb.setText(TopMenuList.get(i).getName());
-            rb.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ShowYourMessage.msgToShowShort(MainActivity.this, "我切換頁面了(" + TopMenuList.get(v.getId()).getName() + ")");
-                }
-            });
             RadioGroup.LayoutParams params = new RadioGroup.LayoutParams(RadioGroup.LayoutParams.FILL_PARENT, RadioGroup.LayoutParams.WRAP_CONTENT);
             tab.addView(rb, params);
         }
@@ -112,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         tab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                mPageVp.setCurrentItem(checkedId);
                 ShowYourMessage.msgToShowShort(MainActivity.this, "我切換頁面了(" + TopMenuList.get(checkedId).getName() + ")");
             }
         });
@@ -145,8 +142,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         mFragmentAdapter = new FragmentAdapter(this.getSupportFragmentManager(), mFragmentList);
         mPageVp.setAdapter(mFragmentAdapter);
         mPageVp.setCurrentItem(0);
-        mPageVp.setOffscreenPageLimit(2);
-        mPageVp.setOnPageChangeListener(new OnPageChangeListener() {
+        mPageVp.setOffscreenPageLimit(1);
+        mPageVp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -154,6 +151,18 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
             @Override
             public void onPageSelected(int position) {
+
+                /*timer.schedule(new TimerTask() {
+                    @Override public void run() {
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                // TODO Auto-generated method stub geticard();
+                            }
+                        });
+                    }
+                }, 500);*/
+
                 //無論選到哪個都變換TITLE
                 onSectionAttached(position);
 
@@ -161,6 +170,10 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
                 //更改ACTIONBAR TITLE
                 actionBar.setTitle(mTitle);
+
+                if (mPageVp != null) {
+                    mPageVp.setCurrentItem(position);
+                }
                 invalidateOptionsMenu();
             }
 
@@ -186,7 +199,13 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
     //選到選單時要觸發的事件
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
+    public void onNavigationDrawerItemSelectedRight(int position) {
+
+    }
+
+    //選到選單時要觸發的事件
+    @Override
+    public void onNavigationDrawerItemSelectedLeft(int position) {
         //更改原本寫法,因為要用VIEWPAGER的方式,因此直接調用mPageVp.setCurrentItem切換既可
         if (mPageVp != null) {
             mPageVp.setCurrentItem(position);
@@ -215,11 +234,18 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
     //產生右上角的menu選單
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
+        if (!mNavigationDrawerFragmentLeft.isDrawerOpen()) {
             getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
             return true;
         }
+
+        if (!mNavigationDrawerFragmentRight.isDrawerOpen()) {
+            getMenuInflater().inflate(R.menu.main, menu);
+            restoreActionBar();
+            return true;
+        }
+
         return super.onCreateOptionsMenu(menu);
     }
 
