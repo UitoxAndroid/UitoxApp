@@ -37,17 +37,17 @@
     <fragment
         android:id="@+id/navigation_drawer_left"
         android:name="com.uitox.asap.NavigationDrawerFragmentLeft"
-        android:layout_width="@dimen/navigation_drawer_width"
+        android:layout_width="@dimen/navigation_drawer_width_left"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        tools:layout="@layout/fragment_navigation_drawer" />
+        tools:layout="@layout/fragment_navigation_drawer_left" />
 
     <fragment
         android:id="@+id/navigation_drawer_right"
         android:name="com.uitox.asap.NavigationDrawerFragmentRight"
-        android:layout_width="@dimen/navigation_drawer_width"
+        android:layout_width="@dimen/navigation_drawer_width_right"
         android:layout_height="match_parent"
         android:layout_gravity="end"
-        tools:layout="@layout/fragment_navigation_drawer" />
+        tools:layout="@layout/fragment_navigation_drawer_right" />
 
 </android.support.v4.widget.DrawerLayout>

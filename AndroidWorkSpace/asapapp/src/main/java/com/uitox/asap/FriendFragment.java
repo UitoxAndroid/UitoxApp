@@ -56,4 +56,8 @@ public class FriendFragment extends BaseFragment {
 
     }
 
+    @Override
+    public void updateUI() {
+
+    }
 }

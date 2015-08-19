@@ -177,4 +177,9 @@ public class ContactsFragment extends BaseFragment {
         super.onStop();
         NetWorkTool.getInstance(getActivity()).cancelAll(this);
     }
+
+    @Override
+    public void updateUI() {
+
+    }
 }

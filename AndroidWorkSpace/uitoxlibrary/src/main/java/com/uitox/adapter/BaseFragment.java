@@ -106,6 +106,7 @@ public abstract class BaseFragment extends Fragment {
             protected void onPostExecute(Boolean isSuccess) {
                 if (isSuccess) {
                     mHasLoadedOnce = true;
+                    updateUI();
                 } else {
                     ShowYourMessage.msgToShowShort(getActivity(),"讀取資料ERROR");
                 }
@@ -147,4 +148,5 @@ public abstract class BaseFragment extends Fragment {
     //必須實作的接收參數
     public abstract void initBundle(Bundle bundle);
 
+    public abstract void updateUI();
 }

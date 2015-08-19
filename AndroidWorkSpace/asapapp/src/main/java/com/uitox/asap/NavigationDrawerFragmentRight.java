@@ -205,7 +205,7 @@ public class NavigationDrawerFragmentRight extends BaseFragment {
 
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer_right, container, false);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -303,5 +303,10 @@ public class NavigationDrawerFragmentRight extends BaseFragment {
          * Called when an item in the navigation drawer is selected.
          */
         void onNavigationDrawerItemSelectedRight(int position);
+    }
+
+    @Override
+    public void updateUI(){
+
     }
 }

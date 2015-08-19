@@ -21,15 +21,14 @@ public class ViewHolder {
     private int mPosition;
     private View mConvertView;
     private ImageLoader imageLoader;
-
+    private Context context;
     public ViewHolder(Context context, ViewGroup parent, int layoutId, int position) {
         this.mPosition = position;
         this.mViews = new SparseArray<View>();
+        this.context = context;
         mConvertView = LayoutInflater.from(context).inflate(layoutId, parent, false);
         mConvertView.setTag(this);
-        if (imageLoader == null) {
-            imageLoader = NetWorkTool.getInstance(context).getImageLoader();
-        }
+
     }
 
     public static ViewHolder get(Context context, View convertView, ViewGroup parent, int layoutId, int position) {
@@ -83,6 +82,9 @@ public class ViewHolder {
     }
 
     public ViewHolder setImageUrl(int viewId, String url) {
+        if (imageLoader == null) {
+            imageLoader = NetWorkTool.getInstance(context).getImageLoader();
+        }
         NetworkImageView iv = getView(viewId);
         iv.setDefaultImageResId(R.drawable.loading);
         iv.setImageUrl(url, imageLoader);

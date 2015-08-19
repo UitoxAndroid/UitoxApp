@@ -1,6 +1,5 @@
 package com.uitox.asap;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -11,7 +10,6 @@ import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.HorizontalScrollView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -151,18 +149,6 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
 
             @Override
             public void onPageSelected(int position) {
-
-                /*timer.schedule(new TimerTask() {
-                    @Override public void run() {
-                        MainActivity.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                // TODO Auto-generated method stub geticard();
-                            }
-                        });
-                    }
-                }, 500);*/
-
                 //無論選到哪個都變換TITLE
                 onSectionAttached(position);
 
@@ -231,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         actionBar.setTitle(mTitle);
     }
 
-    //產生右上角的menu選單
+    //產生左右導覽列
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragmentLeft.isDrawerOpen()) {
@@ -250,8 +236,9 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
     }
 
     //當右上角的選單被選取後的觸發事件
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
@@ -265,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     //設定時間監聽返回鍵
     Timer tExit = new Timer();
@@ -280,12 +267,14 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
     //返回健要連按兩次才會退出,其餘失效
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        mNavigationDrawerFragmentLeft.close();
+        mNavigationDrawerFragmentRight.close();
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (isExit == false) {
                 isExit = true;
                 ShowYourMessage.msgToShowShort(this, "再按一次後退鍵退出應用程式");
                 if (!hasTask) {
-                    tExit.schedule(task, 2000);
+                    tExit.schedule(task, 3000);
                 }
             } else {
                 finish();

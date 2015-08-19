@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidWorkSpace.iml" filepath="$PROJECT_DIR$/AndroidWorkSpace.iml" />
       <module fileurl="file://$PROJECT_DIR$/asapapp/asapapp.iml" filepath="$PROJECT_DIR$/asapapp/asapapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/entity/entity.iml" filepath="$PROJECT_DIR$/entity/entity.iml" />
-      <module fileurl="file://$PROJECT_DIR$/facebook/facebook.iml" filepath="$PROJECT_DIR$/facebook/facebook.iml" />
       <module fileurl="file://$PROJECT_DIR$/uitoxlibrary/uitoxlibrary.iml" filepath="$PROJECT_DIR$/uitoxlibrary/uitoxlibrary.iml" />
     </modules>
   </component>

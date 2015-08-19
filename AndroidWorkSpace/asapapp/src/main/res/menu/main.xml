@@ -2,15 +2,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
+
     <item
         android:id="@+id/action_example"
+        android:icon="@drawable/ic_drawer"
         android:title="@string/action_example"
-        app:showAsAction="withText|ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_settings"
+        android:icon="@drawable/ic_drawer"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
 
     <!--1、always：這個值會使功能表項目一直顯示在Action Bar上。
     2、ifRoom：如果有足夠的空間，這個值會使功能表項目顯示在Action Bar上。

@@ -16,16 +16,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.uitox.adapter.BaseFragment;
+import com.uitox.adapter.ExpandAdapter;
 import com.uitox.adapter.MyAdapter;
 import com.uitox.fb.entity.Movie;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -63,6 +64,10 @@ public class NavigationDrawerFragmentLeft extends BaseFragment {
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
+    private ExpandableListView expDrawerListView;
+    private HashMap<String, List<String>> listDataChild;
+    private ExpandAdapter listAdapter;
+    private List<String> listDataHeader;
 
     //自訂選單
     private List<Movie> movieList = new ArrayList<Movie>();
@@ -154,8 +159,7 @@ public class NavigationDrawerFragmentLeft extends BaseFragment {
                     // The user manually opened the drawer; store this flag to prevent auto-showing
                     // the navigation drawer automatically in the future.
                     mUserLearnedDrawer = true;
-                    SharedPreferences sp = PreferenceManager
-                            .getDefaultSharedPreferences(getActivity());
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
                     sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
                 }
 
@@ -205,7 +209,7 @@ public class NavigationDrawerFragmentLeft extends BaseFragment {
 
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        /*mDrawerListView = (ListView) inflater.inflate(R.layout.fragment_navigation_drawer_left, container, false);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -222,7 +226,18 @@ public class NavigationDrawerFragmentLeft extends BaseFragment {
                         getString(R.string.title_section2),
                         getString(R.string.title_section3),
                 }));
-
+        */
+        expDrawerListView = (ExpandableListView) inflater.inflate(R.layout.fragment_navigation_drawer_left, container, false);
+        prepareListData();
+        listAdapter = new ExpandAdapter(getActivity(), listDataHeader, listDataChild);
+        expDrawerListView.setAdapter(listAdapter);
+        expDrawerListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                return false;
+            }
+        });
+        return expDrawerListView;
         /*
         //可以制訂自己的選單畫面,一樣用listview
         adapter = new MyAdapter<Movie>(getActivity(), movieList, R.layout.list_row) {
@@ -235,10 +250,47 @@ public class NavigationDrawerFragmentLeft extends BaseFragment {
                         .setImageUrl(R.id.thumbnail, movie.getImageUrl());
             }
         };
-        mDrawerListView.setAdapter(adapter);*/
+        mDrawerListView.setAdapter(adapter);
 
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return mDrawerListView;
+        return mDrawerListView;*/
+    }
+
+    private void prepareListData() {
+        listDataHeader = new ArrayList<String>();
+        listDataChild = new HashMap<String, List<String>>();
+
+        // Adding child data
+        listDataHeader.add("Batsman");
+        listDataHeader.add("Bowler");
+        listDataHeader.add("All rounder");
+        listDataHeader.add("Wicket keeper");
+
+        // Adding child data
+        List<String> batsman = new ArrayList<String>();
+        batsman.add("V. Kohli");
+        batsman.add("G.J. Bailey");
+        batsman.add("H.M. Amla");
+
+        List<String> bowler = new ArrayList<String>();
+        bowler.add("D.W. Steyn");
+        bowler.add("J.M. Anderson");
+        bowler.add("M.G. Johnson");
+
+        List<String> all = new ArrayList<String>();
+        all.add("R.A. Jadeja");
+        all.add("Shakib Al Hasan");
+        all.add("D.J. Bravo");
+
+        List<String> wk = new ArrayList<String>();
+        wk.add("A.B. de Villiers");
+        wk.add("M.S. Dhoni");
+        wk.add("K.C. Sangakkara");
+
+        listDataChild.put(listDataHeader.get(0), batsman); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), bowler);
+        listDataChild.put(listDataHeader.get(2), all);
+        listDataChild.put(listDataHeader.get(3), wk);
     }
 
     @Override
@@ -283,15 +335,15 @@ public class NavigationDrawerFragmentLeft extends BaseFragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
-        if (item.getItemId() == R.id.action_example) {
+        if (id == R.id.action_example) {
             Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -318,5 +370,10 @@ public class NavigationDrawerFragmentLeft extends BaseFragment {
          * Called when an item in the navigation drawer is selected.
          */
         void onNavigationDrawerItemSelectedLeft(int position);
+    }
+
+    @Override
+    public void updateUI(){
+
     }
 }

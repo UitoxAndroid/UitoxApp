@@ -94,4 +94,9 @@ public class ChatFragment extends BaseFragment implements BaseSliderView.OnSlide
     public void onPageScrollStateChanged(int i) {
         //ShowYourMessage.msgToShowShort(getActivity(),"onPageScrollStateChanged");
     }
+
+    @Override
+    public void updateUI() {
+
+    }
 }

@@ -34,4 +34,8 @@ public class CategoryFragment extends BaseFragment {
         channelName = bundle.getString("name");
     }
 
+    @Override
+    public void updateUI() {
+
+    }
 }
