@@ -10,12 +10,12 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
-import com.uitox.adapter.BaseFragment;
+import com.uitox.view.BaseFragmentView;
 import com.uitox.lib.ShowYourMessage;
 
 import java.util.HashMap;
 
-public class ChatFragment extends BaseFragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+public class ChatFragmentView extends BaseFragmentView implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
     SliderLayout sliderShow;
 
     @Override

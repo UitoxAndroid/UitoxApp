@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.uitox.adapter.BaseFragment;
+import com.uitox.view.BaseFragmentView;
 import com.uitox.adapter.MyAdapter;
 import com.uitox.adapter.ViewHolder;
 import com.uitox.fb.entity.Movie;
@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ContactsFragment extends BaseFragment {
+public class ContactsFragmentView extends BaseFragmentView {
     private ListView listView;
     private List<Movie> movieList = new ArrayList<Movie>();
     private MyAdapter adapter;
@@ -39,7 +39,7 @@ public class ContactsFragment extends BaseFragment {
     ArrayAdapter<String> adapter_c;
     ScrollView sv;
 
-    public ContactsFragment() {
+    public ContactsFragmentView() {
     }
 
     @Override

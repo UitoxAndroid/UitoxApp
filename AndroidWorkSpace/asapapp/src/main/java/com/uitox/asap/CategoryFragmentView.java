@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.uitox.adapter.BaseFragment;
+import com.uitox.view.BaseFragmentView;
 
-public class CategoryFragment extends BaseFragment {
+public class CategoryFragmentView extends BaseFragmentView {
     private String channelName;
     private View view;
 

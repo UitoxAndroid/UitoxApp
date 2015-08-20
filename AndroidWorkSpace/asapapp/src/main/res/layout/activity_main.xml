@@ -25,7 +25,7 @@
 
         </LinearLayout>
 
-        <com.uitox.adapter.BaseViewPager
+        <com.uitox.view.BasePagerView
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/navigation_drawer_left"
-        android:name="com.uitox.asap.NavigationDrawerFragmentLeft"
+        android:name="com.uitox.asap.NavigationDrawerFragmentViewLeft"
         android:layout_width="@dimen/navigation_drawer_width_left"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/navigation_drawer_right"
-        android:name="com.uitox.asap.NavigationDrawerFragmentRight"
+        android:name="com.uitox.asap.NavigationDrawerFragmentViewRight"
         android:layout_width="@dimen/navigation_drawer_width_right"
         android:layout_height="match_parent"
         android:layout_gravity="end"

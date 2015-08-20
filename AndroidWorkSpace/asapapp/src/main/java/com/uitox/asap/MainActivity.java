@@ -23,11 +23,11 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements NavigationDrawerFragmentLeft.NavigationDrawerCallbacks,NavigationDrawerFragmentRight.NavigationDrawerCallbacks {
+public class MainActivity extends AppCompatActivity implements NavigationDrawerFragmentViewLeft.NavigationDrawerCallbacks,NavigationDrawerFragmentViewRight.NavigationDrawerCallbacks {
 
     //導覽列容器
-    private NavigationDrawerFragmentLeft mNavigationDrawerFragmentLeft;
-    private NavigationDrawerFragmentRight mNavigationDrawerFragmentRight;
+    private NavigationDrawerFragmentViewLeft mNavigationDrawerFragmentLeft;
+    private NavigationDrawerFragmentViewRight mNavigationDrawerFragmentRight;
 
     //儲存action bar title
     private CharSequence mTitle;
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
     //初始化VIEW
     private void initView() {
         //產生一個導覽列容器
-        mNavigationDrawerFragmentLeft = (NavigationDrawerFragmentLeft) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_left);
-        mNavigationDrawerFragmentRight = (NavigationDrawerFragmentRight) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_right);
+        mNavigationDrawerFragmentLeft = (NavigationDrawerFragmentViewLeft) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_left);
+        mNavigationDrawerFragmentRight = (NavigationDrawerFragmentViewRight) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer_right);
 
         //預設取APP名字
         mTitle = getTitle();

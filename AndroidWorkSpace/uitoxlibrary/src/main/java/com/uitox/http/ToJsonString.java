@@ -9,14 +9,13 @@ import java.util.List;
  * Created by babyandy on 2015/8/13.
  */
 public class ToJsonString {
-    private static Gson gson =  new Gson();
+    private static Gson gson = new Gson();
 
-    public String toJson(HashMap hashMap)
-    {
+    public String toJson(HashMap hashMap) {
         return gson.toJson(hashMap);
     }
-    public String toJson(List list)
-    {
+
+    public String toJson(List list) {
         return gson.toJson(list);
     }
 }

@@ -6,15 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.uitox.adapter.BaseFragment;
+import com.uitox.view.BaseFragmentView;
 import com.uitox.http.ToJsonString;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class FriendFragment extends BaseFragment {
+public class FriendFragmentView extends BaseFragmentView {
 
-    public FriendFragment() {
+    public FriendFragmentView() {
     }
 
     @Override

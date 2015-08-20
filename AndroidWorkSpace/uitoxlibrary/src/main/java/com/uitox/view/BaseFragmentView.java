@@ -1,4 +1,4 @@
-package com.uitox.adapter;
+package com.uitox.view;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -13,7 +13,7 @@ import com.uitox.lib.ShowYourMessage;
 /**
  * Created by babyandy on 2015/8/17.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragmentView extends Fragment {
 
     //http://blog.csdn.net/manoel/article/details/7577353
     //Fragment生命週期
