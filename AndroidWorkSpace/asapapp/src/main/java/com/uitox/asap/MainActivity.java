@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,6 +17,7 @@ import android.widget.RadioGroup;
 
 import com.uitox.adapter.FragmentAdapter;
 import com.uitox.asapapp.TopMenu;
+import com.uitox.gcm.GCM;
 import com.uitox.lib.ShowYourMessage;
 
 import java.util.ArrayList;
@@ -90,6 +92,10 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         //會自動打開....所以關閉
         mNavigationDrawerFragmentLeft.close();
         mNavigationDrawerFragmentRight.close();
+
+        GCM GCM = new GCM(this);
+        GCM.openGCM();
+        Log.i("regId", GCM.getRegistrationId());
     }
 
     //動態產生topmenu
