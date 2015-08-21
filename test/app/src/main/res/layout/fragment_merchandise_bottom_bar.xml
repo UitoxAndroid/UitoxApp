@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/line" android:background="@color/color_d5d5d5" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginBottom="10.0dip" />
-    <com.feiniu.market.view.NumControl android:id="@id/nc_buy_qty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_below="@id/line" android:layout_centerVertical="true" />
-    <ImageView android:id="@id/iv_shopcart" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/shoppingcart_icon" android:layout_below="@id/line" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-    <TextView android:textSize="@dimen/font_size_small" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_badge_shopcart" android:background="@drawable/shopping_num_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="0" android:layout_below="@id/line" android:layout_alignParentRight="true" />
-    <TextView android:textColor="@android:color/white" android:gravity="center" android:id="@id/tv_add_shopcart" android:background="@drawable/detail_shopping_btn_bg" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/add_to_cart" android:layout_toLeftOf="@id/iv_shopcart" android:layout_toRightOf="@id/nc_buy_qty" android:layout_below="@id/line" />
-</RelativeLayout>

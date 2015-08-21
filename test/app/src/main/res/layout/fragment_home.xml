@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/root" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_noline_height" layout="@layout/util_searchbar" />
-    <View android:background="@color/color_d5d5d5" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <com.handmark.pulltorefresh.library.PullToRefreshScrollView android:id="@id/main_scroll" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" ptr:ptrMode="pullDownFromTop" ptr:ptrDrawableStart="@drawable/xlistview_arrow" ptr:ptrAnimationStyle="flip" ptr:ptrScrollingWhileRefreshingEnabled="true" xmlns:ptr="http://schemas.android.com/apk/res-auto" />
-</LinearLayout>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="@dimen/font_size_middle" android:textColor="@color/color_666666" android:layout_gravity="top" android:id="@id/label" android:visibility="gone" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
-        <FrameLayout android:id="@id/contextView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" />
-    </LinearLayout>
-    <ImageView android:id="@id/arrow" android:paddingLeft="15.0dip" android:paddingTop="8.0dip" android:paddingRight="12.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:src="@drawable/safari_forward" android:layout_alignParentRight="true" />
-</RelativeLayout>

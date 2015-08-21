@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="center_horizontal" android:id="@id/root" android:background="@color/city_background" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <TextView android:textSize="@dimen/cityselecter_sp2" android:textColor="@drawable/filter_details_click" android:gravity="center_vertical" android:id="@id/city_name" android:paddingLeft="@dimen/cityselecter_dp3" android:paddingTop="@dimen/cityselecter_dp4" android:paddingBottom="@dimen/cityselecter_dp4" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true" />
-        <ImageView android:id="@id/select_img" android:paddingRight="@dimen/cityselecter_dp3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/detail_down" android:layout_weight="1.0" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-        <ImageView android:id="@id/bottom_line" android:background="@null" android:layout_width="fill_parent" android:layout_height="@dimen/cityselecter_dp1" android:src="@color/citySelect_color1" android:layout_alignParentBottom="true" />
-    </RelativeLayout>
-</LinearLayout>

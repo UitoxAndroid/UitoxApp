@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="@dimen/small_middle_text_size" android:textColor="@color/gray_9c9c9c" android:id="@id/tv_auth_get_way" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="20.0dip" android:paddingBottom="10.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hint_please_choose_auth_get_way"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

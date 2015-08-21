@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0">
-        <com.feiniu.market.view.image.SmartImageView android:id="@id/rec_merch_item_img" android:layout_width="78.0dip" android:layout_height="78.0dip" android:src="@drawable/default_image_small" android:scaleType="centerCrop" />
-        <ImageView android:layout_gravity="bottom|center|right" android:id="@id/rec_merch_item_add_cart" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/rec_btn_add" android:scaleType="centerInside" />
-    </FrameLayout>
-</merge>

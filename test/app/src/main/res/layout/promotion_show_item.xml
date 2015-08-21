@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/font_size_small" android:textColor="@android:color/white" android:gravity="center" android:id="@id/promotionLabel" android:background="@color/color_d6253b" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
-    <TextView android:textSize="@dimen/font_size_middle" android:textColor="@color/color_333333" android:id="@id/promotionMsg" android:paddingRight="40.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/promotionLabel" />
-    <ImageView android:id="@id/iconArrow" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/icon_arrow" android:layout_alignParentRight="true" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/thumbnail" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="60.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/promotionMsg" />
-</RelativeLayout>

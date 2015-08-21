@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RadioButton android:background="@drawable/cart_checkbox" android:clickable="true" android:layout_width="21.0dip" android:layout_height="21.0dip" android:checked="false" android:button="@null"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

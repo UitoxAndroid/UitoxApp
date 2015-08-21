@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/ic_more_item_middle_default" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="50.0dip">
-        <TextView android:textSize="20.0sp" android:textColor="@color/bottom_tab_item_text" android:id="@id/address_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/specification" />
-    </LinearLayout>
-    <View android:background="@drawable/red_horizontal_separator" android:layout_width="fill_parent" android:layout_height="3.0dip" />
-    <ListView android:id="@id/merchantdise_category_list" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/more_itemmiddle_press" android:cacheColorHint="#00000000" android:divider="@drawable/line" android:minHeight="300.0dip" />
-</LinearLayout>

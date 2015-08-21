@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="@dimen/countdown_groupbuy_text_size" android:textColor="@color/countdown_groupbuy_text" android:id="@id/countdown_groupbuy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableLeft="@drawable/alarm_icon" android:drawablePadding="4.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.feiniu.market.unused.view.CategoryDrawerLayout android:id="@id/drawer" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListView android:id="@id/first_level_content" android:background="#ffffffff" android:scrollbars="none" android:animationCache="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#fff5f5f5" android:scrollingCache="false" android:transcriptMode="alwaysScroll" android:cacheColorHint="#00000000" android:smoothScrollbar="false" />
-    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="-14.0dip">
-        <ListView android:id="@id/second_level_content" android:background="#ffffffff" android:scrollbars="none" android:animationCache="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:listSelector="#fff5f5f5" android:scrollingCache="false" android:transcriptMode="alwaysScroll" android:cacheColorHint="#00000000" android:layout_weight="1.0" android:smoothScrollbar="false" />
-        <ListView android:layout_gravity="right" android:id="@id/third_level_content" android:background="@color/gray_f8f8f8" android:scrollbars="none" android:animationCache="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:listSelector="#fff5f5f5" android:scrollingCache="false" android:cacheColorHint="#00000000" android:layout_weight="1.0" android:smoothScrollbar="false" />
-    </LinearLayout>
-</com.feiniu.market.unused.view.CategoryDrawerLayout>

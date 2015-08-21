@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:icon="@drawable/btn_search_result_change_view_grid" android:id="@id/mi_switch" android:title="切换显示方式" app:showAsAction="always" />
-</menu>

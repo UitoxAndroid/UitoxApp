@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="@dimen/font_size_small" android:textColor="#ff696969" android:id="@id/rec_merch_item_name_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="BURBERRY 女士浓香水" android:singleLine="true" android:layout_weight="0.0" />
-        <TextView android:textSize="@dimen/font_size_small" android:textColor="#ff696969" android:ellipsize="end" android:id="@id/rec_merch_item_name_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="BURBERRY 女士浓香水" android:singleLine="true" android:layout_weight="0.0" />
-        <TextView android:textSize="@dimen/font_size_small" android:textColor="#ffdb3a4c" android:ellipsize="end" android:id="@id/rec_merch_item_sm_price" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="2.0dip" android:text="Y 990.80" android:layout_weight="1.0" />
-    </LinearLayout>
-</merge>
