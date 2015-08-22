@@ -44,10 +44,10 @@ public abstract class MyAdapter<T> extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = ViewHolder.get(mContext, convertView, parent, layoutId, position);
-        convert(holder, getItem(position), convertView);
+        convert(holder, getItem(position), convertView, position);
         return holder.getConvertView();
     }
 
     //必須實作的部分
-    public abstract void convert(ViewHolder holder, T t, View convertView);
+    public abstract void convert(ViewHolder holder, T t, View convertView,int position);
 }

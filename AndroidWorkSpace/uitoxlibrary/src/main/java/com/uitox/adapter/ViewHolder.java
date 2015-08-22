@@ -50,6 +50,12 @@ public class ViewHolder {
         return (T) view;
     }
 
+    public TextView setTextReturnView(int viewId, String text) {
+        TextView tv = getView(viewId);
+        tv.setText(text);
+        return tv;
+    }
+
     public ViewHolder setText(int viewId, String text) {
         TextView tv = getView(viewId);
         tv.setText(text);

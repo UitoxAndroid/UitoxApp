@@ -24,7 +24,7 @@ public class MapsActivity extends BaseFragmentView {
 
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_location_info, container, false);
+        view = inflater.inflate(R.layout.map_location_info, container, false);
         mMapView = (MapView) view.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
 

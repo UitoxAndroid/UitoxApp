@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         mFragmentAdapter = new FragmentAdapter(this.getSupportFragmentManager(), mFragmentList);
         mPageVp.setAdapter(mFragmentAdapter);
         mPageVp.setCurrentItem(0);
-        mPageVp.setOffscreenPageLimit(1);
+        mPageVp.setOffscreenPageLimit(2);
         mPageVp.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

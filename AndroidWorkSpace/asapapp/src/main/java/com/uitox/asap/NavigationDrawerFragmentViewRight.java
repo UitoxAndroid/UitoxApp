@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 import com.uitox.view.BaseFragmentView;
 import com.uitox.adapter.MyAdapter;
-import com.uitox.fb.entity.Movie;
+import com.uitox.asapapp.Movie;
 
 import java.util.ArrayList;
 import java.util.List;

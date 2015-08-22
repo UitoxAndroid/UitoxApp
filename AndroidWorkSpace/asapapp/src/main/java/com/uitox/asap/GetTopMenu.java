@@ -12,11 +12,12 @@ public class GetTopMenu {
     private static List<TopMenu> selectedTop = new ArrayList<TopMenu>();
 
     static {
-        selectedTop.add(new TopMenu("", "1", 0, "com.uitox.asap.ChatFragmentView"));
-        selectedTop.add(new TopMenu("", "2", 0, "com.uitox.asap.ContactsFragmentView"));
-        selectedTop.add(new TopMenu("", "3", 0, "com.uitox.asap.FriendFragmentView"));
-        selectedTop.add(new TopMenu("", "4", 0, "com.uitox.asap.CategoryFragmentView"));
-        selectedTop.add(new TopMenu("", "5", 0, "com.uitox.asap.MapsActivity"));
+        selectedTop.add(new TopMenu("", "輪播 Demo", 0, "com.uitox.asap.BannerFragmentView"));
+        selectedTop.add(new TopMenu("", "ListView + ScrollView Demo", 0, "com.uitox.asap.ListViewANDScrollViewFragmentView"));
+        selectedTop.add(new TopMenu("", "AutoComplete Demo", 0, "com.uitox.asap.AutoCompleteTextFragmentView"));
+        selectedTop.add(new TopMenu("", "ListView", 0, "com.uitox.asap.ListViewFragmentView"));
+        selectedTop.add(new TopMenu("", "Map Demo", 0, "com.uitox.asap.MapsActivity"));
+        selectedTop.add(new TopMenu("", "多選單 Demo", 0, "com.uitox.asap.MultipleLevelFragmentView"));
 
     }
 

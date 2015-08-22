@@ -17,4 +17,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_maps">Map</string>
+
+    <color name="popup_right_bg">#ddd</color>
+    <color name="popup_left_bg">#eee</color>
 </resources>
