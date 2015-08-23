@@ -16,4 +16,6 @@ public class BasePagerView extends ViewPager {
     public BasePagerView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
+
 }

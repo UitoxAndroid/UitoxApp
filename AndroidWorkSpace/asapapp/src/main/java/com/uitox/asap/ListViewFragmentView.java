@@ -35,7 +35,7 @@ public class ListViewFragmentView extends BaseFragmentView {
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.listview_fragment_view, container, false);
 
-        listView = (ListView) view.findViewById(R.id.listView2);
+        listView = (ListView) view.findViewById(R.id.listView);
         adapter = new MyAdapter<Movie>(getActivity(), movieList, R.layout.list_row) {
             @Override
             public void convert(ViewHolder holder, Movie movie, View convertView, int position) {

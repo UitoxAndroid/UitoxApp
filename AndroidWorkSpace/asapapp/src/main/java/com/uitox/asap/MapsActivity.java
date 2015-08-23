@@ -69,7 +69,7 @@ public class MapsActivity extends BaseFragmentView {
 
     }
 
-    @Override
+    /*@Override
     public void onResume() {
         super.onResume();
         mMapView.onResume();
@@ -91,7 +91,7 @@ public class MapsActivity extends BaseFragmentView {
     public void onLowMemory() {
         super.onLowMemory();
         mMapView.onLowMemory();
-    }
+    }*/
 
 
 }
