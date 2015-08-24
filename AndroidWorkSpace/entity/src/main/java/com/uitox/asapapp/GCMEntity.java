@@ -11,7 +11,7 @@ public class GCMEntity {
     private List<GCMEntityResult> results;
 
     //{"multicast_id":6660102880917479615,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1440393733821321%124a2af3f9fd7ecd"}]}
-
+    //test
     public GCMEntity(List<GCMEntityResult> results, int success, int failure, int canonical_ids, double multicast_id) {
         this.results = results;
         this.success = success;
