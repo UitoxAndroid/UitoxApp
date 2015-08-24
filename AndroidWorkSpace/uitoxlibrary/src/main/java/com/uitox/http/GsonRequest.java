@@ -81,6 +81,7 @@ public class GsonRequest<T> extends Request<T> {
             }
             Log.i("GsonRequest",json);
             if(isArray){
+                Log.i("GsonRequest", "array");
                 final List<T> list = new ArrayList<T>();
                 JsonParser parser = new JsonParser();
                 JsonArray jsonArray = parser.parse(json).getAsJsonArray();
@@ -96,7 +97,7 @@ public class GsonRequest<T> extends Request<T> {
                         }
                     }
                 });
-                Log.i("GsonRequest", "array");
+
                 return Response.success(list.get(0), HttpHeaderParser.parseCacheHeaders(networkResponse));
             }else {
                 Log.i("GsonRequest","not array");

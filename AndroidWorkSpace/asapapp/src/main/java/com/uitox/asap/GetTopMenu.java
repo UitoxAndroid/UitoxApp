@@ -18,6 +18,7 @@ public class GetTopMenu {
         selectedTop.add(new TopMenu("", "AutoComplete Demo", 0, "com.uitox.asap.AutoCompleteTextFragmentView"));
         selectedTop.add(new TopMenu("", "ListView", 0, "com.uitox.asap.ListViewFragmentView"));
         selectedTop.add(new TopMenu("", "多選單 Demo", 0, "com.uitox.asap.MultipleLevelFragmentView"));
+        selectedTop.add(new TopMenu("", "GCMEntity Demo", 0, "com.uitox.asap.GCMFragmentView"));
     }
 
     public static List<TopMenu> getSelectedTopMenu() {
