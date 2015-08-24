@@ -12,12 +12,12 @@ public class GCMEntity {
 
     //{"multicast_id":6660102880917479615,"success":1,"failure":0,"canonical_ids":0,"results":[{"message_id":"0:1440393733821321%124a2af3f9fd7ecd"}]}
 
-    public GCMEntity(int success, int failure, int canonical_ids, double multicast_id, List<GCMEntityResult> results) {
+    public GCMEntity(List<GCMEntityResult> results, int success, int failure, int canonical_ids, double multicast_id) {
+        this.results = results;
         this.success = success;
         this.failure = failure;
         this.canonical_ids = canonical_ids;
         this.multicast_id = multicast_id;
-        this.results = results;
     }
 
     public int getSuccess() {
