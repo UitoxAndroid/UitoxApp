@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -38,12 +39,19 @@ public class ListViewFragmentView extends BaseFragmentView {
         listView = (ListView) view.findViewById(R.id.listView);
         adapter = new MyAdapter<Movie>(getActivity(), movieList, R.layout.list_row) {
             @Override
-            public void convert(ViewHolder holder, Movie movie, View convertView, int position) {
+            public void convert(ViewHolder holder, Movie movie, View convertView, final int position) {
                 holder.setText(R.id.title, movie.getTitle())
                         .setText(R.id.releaseYear, String.valueOf(movie.getYear()))
                         .setText(R.id.rating, String.valueOf(movie.getRating()))
                         .setText(R.id.genre, movie.getGenre())
-                        .setImageUrl(R.id.thumbnail, movie.getImageUrl());
+                        .setImageUrl(R.id.thumbnail, movie.getImageUrl())
+                        .setImageButtonReturnView(R.id.imageButton, R.drawable.ic_cart)
+                        .setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                ShowYourMessage.msgToShowShort(getActivity(), String.valueOf(Integer.valueOf(position)));
+                            }
+                        });
             }
         };
         listView.setAdapter(adapter);
@@ -84,6 +92,10 @@ public class ListViewFragmentView extends BaseFragmentView {
                         ShowYourMessage.msgToShowShort(getActivity(), "ERROR");
                     }
                 }, hashMap);
+        notifyRequest.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         NetWorkTool.getInstance(getActivity()).addToRequestQueue(notifyRequest);
     }
 

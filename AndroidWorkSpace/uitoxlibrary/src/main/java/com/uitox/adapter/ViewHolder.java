@@ -6,6 +6,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class ViewHolder {
     private View mConvertView;
     private ImageLoader imageLoader;
     private Context context;
+
     public ViewHolder(Context context, ViewGroup parent, int layoutId, int position) {
         this.mPosition = position;
         this.mViews = new SparseArray<View>();
@@ -84,6 +86,18 @@ public class ViewHolder {
     public ViewHolder setImageBitmap(int viewId, Bitmap bm) {
         ImageView iv = getView(viewId);
         iv.setImageBitmap(bm);
+        return this;
+    }
+
+    public ImageButton setImageButtonReturnView(int viewId, int imageButton) {
+        ImageButton ib = getView(viewId);
+        ib.setBackgroundResource(imageButton);
+        return ib;
+    }
+
+    public ViewHolder setImageButton(int viewId, int imageButton) {
+        ImageButton ib = getView(viewId);
+        ib.setImageResource(imageButton);
         return this;
     }
 
