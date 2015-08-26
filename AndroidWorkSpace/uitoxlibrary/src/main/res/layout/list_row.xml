@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/list_row_selector"
-    android:padding="8dp" >
+    android:padding="8dp">
 
     <!-- Thumbnail Image -->
     <com.android.volley.toolbox.NetworkImageView
@@ -32,7 +32,7 @@
         android:layout_marginTop="1dip"
         android:layout_toRightOf="@+id/thumbnail"
         android:textSize="@dimen/rating" />
-    
+
     <!-- Genre -->
     <TextView
         android:id="@+id/genre"
@@ -53,5 +53,16 @@
         android:layout_alignParentRight="true"
         android:textColor="@color/year"
         android:textSize="@dimen/year" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/genre"
+        android:layout_alignRight="@+id/genre"
+        android:layout_below="@+id/genre"
+        android:background="@drawable/ic_cart"
+        android:focusable="false"
+        android:gravity="left|center_vertical" />
 
 </RelativeLayout>
