@@ -21,10 +21,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/autoCompleteTextView2"
         android:orientation="vertical">
 
-        <ScrollView
+        <com.uitox.view.StickyScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -62,55 +61,127 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <Button
-                    android:id="@+id/button10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffff0000" />
 
-                <Button
-                    android:id="@+id/button9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffffff00" />
 
-                <Button
-                    android:id="@+id/button8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffaaff33" />
 
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ff0000ff" />
 
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button" />
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ff00ffff"
+                    android:tag="sticky">
 
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
 
-                <Gallery
-                    android:id="@+id/gallery2"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp" />
+                            <Button
+                                android:id="@+id/product_dis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:text="商品說明" />
+
+                            <Button
+                                android:id="@+id/product_model"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:text="規格" />
+
+                            <Button
+                                android:id="@+id/button5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:text="售後服務" />
+
+                        </LinearLayout>
+                    </TableRow>
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffff3333" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffffeeee" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ff0033ff" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffcc9922" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ff333333" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffeeeeee"
+                    android:tag="sticky" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ff999999" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#fff322ff" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ff22ff22" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffff0000" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ffff00ff" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:background="#ff00ffff" />
 
             </LinearLayout>
-        </ScrollView>
+        </com.uitox.view.StickyScrollView>
 
     </LinearLayout>
 

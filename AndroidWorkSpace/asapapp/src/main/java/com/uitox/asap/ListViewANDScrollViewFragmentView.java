@@ -40,12 +40,18 @@ public class ListViewANDScrollViewFragmentView extends BaseFragmentView {
         listView = (ListView) view.findViewById(R.id.listView2);
         adapter = new MyAdapter<Movie>(getActivity(), movieList, R.layout.list_row) {
             @Override
-            public void convert(ViewHolder holder, Movie movie, View convertView, int position) {
+            public void convert(ViewHolder holder, Movie movie, View convertView, final int position) {
                 holder.setText(R.id.title, movie.getTitle())
                         .setText(R.id.releaseYear, String.valueOf(movie.getYear()))
                         .setText(R.id.rating, String.valueOf(movie.getRating()))
                         .setText(R.id.genre, movie.getGenre())
-                        .setImageUrl(R.id.thumbnail, movie.getImageUrl());
+                        .setImageUrl(R.id.thumbnail, movie.getImageUrl())
+                        .setImageButtonReturnView(R.id.imageButton, R.drawable.ic_cart).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                ShowYourMessage.msgToShowShort(getActivity(), String.valueOf(Integer.valueOf(position)));
+                            }
+                        });
             }
         };
         listView.setAdapter(adapter);
