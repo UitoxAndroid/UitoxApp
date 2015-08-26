@@ -92,6 +92,7 @@ public class ViewHolder {
     public ImageButton setImageButtonReturnView(int viewId, int imageButton) {
         ImageButton ib = getView(viewId);
         ib.setBackgroundResource(imageButton);
+        ib.setFocusable(false); //當view裡有Button,CheckBox等控件，focus會默認給他們，所以要將子控件focusable設為false
         return ib;
     }
 
