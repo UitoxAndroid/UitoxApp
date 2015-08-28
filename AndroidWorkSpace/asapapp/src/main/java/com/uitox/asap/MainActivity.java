@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
     //返回建關閉flag
     private static Boolean isExit = false;
     private static Boolean hasTask = false;
-
+    private String regId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

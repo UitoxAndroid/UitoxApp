@@ -14,7 +14,6 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.uitox.asapapp.GCMEntity;
-import com.uitox.asapapp.GCMEntityResult;
 import com.uitox.gcm.GCM;
 import com.uitox.http.GsonRequest;
 import com.uitox.http.NetParams;
@@ -39,10 +38,8 @@ public class GCMFragmentView extends BaseFragmentView {
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.gcm_layout, container, false);
-        GCM GCM = new GCM(getActivity());
-        GCM.openGCM();
-        regId = GCM.getRegistrationId();
-        Log.i("regId", GCM.getRegistrationId());
+        String name = new Object(){}.getClass().getEnclosingMethod().getName();
+
         send_gcm = (Button) view.findViewById(R.id.send_gcm);
         send_msg = (TextView) view.findViewById(R.id.send_msg);
         send_gcm.setOnClickListener(new View.OnClickListener() {
@@ -51,14 +48,6 @@ public class GCMFragmentView extends BaseFragmentView {
                 send();
             }
         });
-
-        /*Gson gson = new Gson();
-        String jsonData = "{\"multicast_id\":6660102880917479615,\"success\":1,\"failure\":0,\"canonical_ids\":0,\"results\":[{\"message_id\":\"0:1440393733821321%124a2af3f9fd7ecd\"}]}";
-        GCMEntity person = gson.fromJson(jsonData, GCMEntity.class);
-
-        for (GCMEntityResult res : person.getResults()) {
-            Log.i("test", res.getMessage_id().toString());
-        }*/
 
         return view;
     }
@@ -82,6 +71,10 @@ public class GCMFragmentView extends BaseFragmentView {
 
     public void send() {
         NetWorkTool.getInstance(getActivity()).clearCache();
+        GCM GCM = new GCM(getActivity());
+        GCM.openGCM();
+        regId = GCM.getRegistrationId();
+        Log.i("regId", GCM.getRegistrationId());
         String msg = send_msg.getText().toString();
         Log.i("send", msg);
         Log.i("send", regId);
@@ -91,15 +84,12 @@ public class GCMFragmentView extends BaseFragmentView {
 
         GsonRequest<GCMEntity> notifyRequest = new GsonRequest<GCMEntity>(
                 Request.Method.POST,
-                NetParams.getSHIHJIEUrl("/phpinfo.php"),
+                NetParams.getSHIHJIEUrl("/gcm.php"),
                 GCMEntity.class,
                 null,
                 new Response.Listener<GCMEntity>() {
                     @Override
                     public void onResponse(GCMEntity gcm) {
-                        for (GCMEntityResult res : gcm.getResults()) {
-                            ShowYourMessage.msgToShowShort(getActivity(), res.getMessage_id().toString());
-                        }
                         ShowYourMessage.msgToShowShort(getActivity(), "send ok");
                     }
                 },

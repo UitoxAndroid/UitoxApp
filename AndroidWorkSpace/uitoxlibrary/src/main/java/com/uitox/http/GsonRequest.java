@@ -32,7 +32,7 @@ public class GsonRequest<T> extends Request<T> {
     private final OnListResponseListener<T> listListener;
     private final boolean isArray;
     private final Context context;
-
+    private String url;
     public interface OnListResponseListener<T>{
         void onResponse(List<T> response);
     }
@@ -47,6 +47,7 @@ public class GsonRequest<T> extends Request<T> {
         this.params = params;
         this.listener = listener;
         this.listListener = null;
+        this.url = url;
     }
 
     public GsonRequest(Context context, int method, String url, Class<T> clazz, Map<String,String> headers,
@@ -59,6 +60,7 @@ public class GsonRequest<T> extends Request<T> {
         this.params = params;
         this.listListener = listener;
         this.listener = null;
+        this.url = url;
     }
 
     public void setHeaders(Map<String, String> headers) {
@@ -79,6 +81,7 @@ public class GsonRequest<T> extends Request<T> {
             }else {
                 json = new String(networkResponse.data, HttpHeaderParser.parseCharset(networkResponse.headers));
             }
+            Log.i("GsonRequest",url);
             Log.i("GsonRequest",json);
             if(isArray){
                 Log.i("GsonRequest", "array");

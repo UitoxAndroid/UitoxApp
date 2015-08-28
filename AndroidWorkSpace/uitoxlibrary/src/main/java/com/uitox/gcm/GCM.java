@@ -187,8 +187,7 @@ public class GCM {
      * @return 傳回Google Play Service可用狀態
      */
     public PlayServicesState checkPlayServices() {
-        int resultCode = GooglePlayServicesUtil
-                .isGooglePlayServicesAvailable(activity);
+        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(activity);
         if (resultCode != ConnectionResult.SUCCESS) {
             if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
                 GooglePlayServicesUtil.getErrorDialog(resultCode, activity, PLAY_SERVICES_RESOLUTION_REQUEST).show();
@@ -250,4 +249,5 @@ public class GCM {
         editor.putInt(PROPERTY_APP_VERSION, appVersion);
         editor.commit();
     }
+
 }
